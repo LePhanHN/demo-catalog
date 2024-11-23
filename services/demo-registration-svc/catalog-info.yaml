@@ -2,12 +2,12 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: alpha-cart-svc
+  name: demo-registration-svc
   tags:
     - auto-generated
   annotations:
-    backstage.io/source-location: url:https://github.com/LePhanHN/alpha-cart-svc
-    github.com/project-slug: LePhanHN/alpha-cart-svc
+    backstage.io/source-location: url:https://github.com/LePhanHN/demo-registration-svc
+    github.com/project-slug: LePhanHN/demo-registration-svc
 spec:
   type: service
   lifecycle: experimental
