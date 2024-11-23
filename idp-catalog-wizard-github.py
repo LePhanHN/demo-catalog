@@ -11,7 +11,7 @@ import subprocess
 
 current_directory = os.path.basename(os.getcwd())
 #branch  = "main"
-branch  = dev""
+branch  = "dev"
 
 yaml_content_template = """
 apiVersion: backstage.io/v1alpha1

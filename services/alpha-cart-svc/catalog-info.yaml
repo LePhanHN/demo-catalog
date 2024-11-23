@@ -11,5 +11,5 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: Harness_Account_All_Users
+  owner: lehphan@gmail.com
   system: LePhanHN
