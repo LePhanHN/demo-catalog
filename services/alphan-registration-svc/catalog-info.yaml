@@ -1,0 +1,15 @@
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: alphan-registration-svc
+  tags:
+    - auto-generated
+  annotations:
+    backstage.io/source-location: url:https://github.com/LePhanHN/alphan-registration-svc
+    github.com/project-slug: LePhanHN/alphan-registration-svc
+spec:
+  type: service
+  lifecycle: experimental
+  owner: Harness_Account_All_Users
+  system: LePhanHN
