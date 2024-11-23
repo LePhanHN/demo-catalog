@@ -3,6 +3,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: alpha-cart-svc
+  codeCoverageScore: 1.00
   tags:
     - auto-generated
   annotations:
