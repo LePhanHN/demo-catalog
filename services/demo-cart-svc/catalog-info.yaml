@@ -13,6 +13,6 @@ metadata:
    
 spec:
   type: service
-  lifecycle: experimental
+  lifecycle: production
   owner: Harness_Account_All_Users
-  system: LePhanHN
+
