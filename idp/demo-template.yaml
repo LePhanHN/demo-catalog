@@ -47,11 +47,10 @@ spec:
         apikey: ${{ parameters.token }}
         showOutputVariables: true
   output:
-    links:
-      - title: Pipeline Details
-          url: ${{ steps.trigger.output.PipelineUrl }}
     text:
       - title: Output Variable
         content: |
            Output Variable **RETURN_VAL** from RUN_1 is `${{ steps.trigger.output['pipeline.stages.idp.spec.execution.steps.Run_1.output.outputVariables.RETURN_VAL'] }}`
-      
+    links:
+      - title: Pipeline Details
+          url: ${{ steps.trigger.output.PipelineUrl }}
