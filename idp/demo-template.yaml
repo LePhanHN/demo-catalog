@@ -47,12 +47,21 @@ spec:
         apikey: ${{ parameters.token }}
         showOutputVariables: true
   output:
+    links:
+      - title: Pipeline Details
+          url: ${{ steps.trigger.output.PipelineUrl }}
     text:
-      - title: Output Variable
+      - title: Outputs
         content: |
-           Output Variable **RETURN_VAL** from RUN_1 is `${{ steps.trigger.output.RETURN_VAL}}`
-#    links:
-#      - title: Pipeline Details
-#          url: ${{ steps.trigger.output.PipelineUrl }}
+          github_org_name: ${{ parameters.github_org_name}}
+          github_repo_name: ${{ parameters.github_repo_name}}
+          
+          
+
+
+
+
+
+          
 
 
