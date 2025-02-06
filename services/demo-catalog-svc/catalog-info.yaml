@@ -9,6 +9,9 @@ metadata:
     backstage.io/source-location: url:https://github.com/LePhanHN/demo-catalog-svc
     github.com/project-slug: LePhanHN/demo-catalog-svc
 spec:
+  dependsOn:
+    - resource:default/demo-catalog-svc-env-dev
+    - resource:default/demo-catalog-svc-env-stage
   type: service
   lifecycle: experimental
   owner: Harness_Account_All_Users
