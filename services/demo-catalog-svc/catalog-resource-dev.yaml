@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: demo-catalog-svc-env-dev
+  description: dev branch
+spec:
+  type: environment
+  owner: Harness_Account_All_Users
+  system: LePhanHN
