@@ -4,6 +4,8 @@ kind: Resource
 metadata:
   name: demo-catalog-svc-env-prod
   description: prod branch
+  tags:
+    - env-prod  
 spec:
   type: environment
   owner: Harness_Account_All_Users
