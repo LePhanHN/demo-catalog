@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: e-commerce
+  description: An e-commerce system
+spec:
+  owner: Harness_Account_All_Users
+  domain: shopping.com
