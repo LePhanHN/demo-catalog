@@ -54,6 +54,10 @@ spec:
       - title: Outputs
         content: |
           return: ${{steps.trigger.output.RETURN_VAL}}
+          github_org_name: ${{ parameters.github_org_name}}
+          github_repo_name: ${{ parameters.github_repo_name}}
+          
+          
           
 
 
