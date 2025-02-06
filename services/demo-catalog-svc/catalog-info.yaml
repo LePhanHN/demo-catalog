@@ -11,8 +11,29 @@ metadata:
 spec:
   dependsOn:
     - resource:default/demo-catalog-svc-env-dev
-    - resource:default/demo-catalog-svc-env-stage
+    - resource:default/demo-catalog-svc-env-prod
   type: service
+  lifecycle: experimental
+  owner: Harness_Account_All_Users
+  system: LePhanHN
+  
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: demo-catalog-svc-env-dev
+  tags:
+    - env-dev
+  lifecycle: experimental
+  owner: Harness_Account_All_Users
+  system: LePhanHN
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: demo-catalog-svc-env-prod
+  tags:
+    - env-prod
   lifecycle: experimental
   owner: Harness_Account_All_Users
   system: LePhanHN
