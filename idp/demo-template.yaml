@@ -49,7 +49,7 @@ spec:
   output:
     links:
       - title: Pipeline Details
-          url: ${{ steps.trigger.output.PipelineUrl }}
+        url: ${{ steps.trigger.output.PipelineUrl }}
     text:
       - title: Outputs
         content: |
