@@ -3,6 +3,8 @@ kind: Resource
 metadata:
   name: demo-catalog-svc-env-dev
   description: dev branch
+  tags:
+    - env-dev
 spec:
   type: environment
   owner: Harness_Account_All_Users
