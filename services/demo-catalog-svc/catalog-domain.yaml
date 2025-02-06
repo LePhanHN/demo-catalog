@@ -1,0 +1,7 @@
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: shopping.com
+  description: Everything about products
+spec:
+  owner: Harness_Account_All_Users
