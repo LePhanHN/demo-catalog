@@ -19,6 +19,7 @@ spec:
         github_org_name:
           title: GitHub Organization
           type: string
+          value: LePhanHN
           description: Name the org where you want to add the new repository
         github_repo_name:
           title: Repository Location
@@ -35,8 +36,7 @@ spec:
             title: GitHub Repository
             description: Pick one of the GitHub Repositories
             placeholder: "Choose a Repository"
-            #path: proxy/github-api/users/{{ parameters.github_org_name }}/repos
-            path: proxy/github-api/users/LePhanHN/repos
+            path: proxy/github-api/users/{{parameters.github_org_name}}/repos
             valueSelector: full_name
         token:
           title: Harness Token
