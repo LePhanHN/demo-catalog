@@ -36,8 +36,10 @@ spec:
             title: AWS Account
             description: Pick one of the AWS Account
             placeholder: "Choose an AWS Account"
-            path: proxy/demo-api?action=listAccounts
-            valueSelector: Id
+            path: proxy/demo-api
+            params:
+              action: "listAccounts"
+            valueSelector: "Id"
             allowArbitraryValues: true           
         token:
           title: Harness Token
