@@ -37,7 +37,7 @@ spec:
             description: Pick one of the GitHub Repositories
             placeholder: "Choose a Repository"
             path: proxy/github-api/users/{{parameters.github_org_name}}/repos
-            valueSelector: full_name
+            valueSelector: ID
         token:
           title: Harness Token
           type: string
