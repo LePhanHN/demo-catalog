@@ -45,13 +45,13 @@ spec:
             title: AWS VPC ID
             description: Pick one of the VPCs
             placeholder: "Choose a VPC"
-            path: /api/proxy/demo-api
+            path: /proxy/demo-api
             valueSelector: VpcId
             request:
               method: POST
               headers:
                 Content-Type: application/jsond
-              body:  { "action": "listVPCs", "account_id" : "12", "region" : "us-west-1"}
+              body: { "action": "listVPCs", "account_id" : "12", "region" : "us-west-1"}
         token:
           title: Harness Token
           type: string
