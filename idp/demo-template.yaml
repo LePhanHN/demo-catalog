@@ -29,15 +29,15 @@ spec:
           title: GitHub Username
           type: string
           description: Add Your GitHub Username 
-        github_repo:
+        aws_account:
           type: string
           ui:field: SelectFieldFromApi
           ui:options:
-            title: GitHub Repository
-            description: Pick one of the GitHub Repositories
-            placeholder: "Choose a Repository"
-            path: proxy/github-api/users/{{parameters.github_org_name}}/repos
-            valueSelector: ID
+            title: AWS Account
+            description: Pick one of the AWS Account
+            placeholder: "Choose an AWS Account"
+            path: proxy/demo-api/?action=listAccounts
+            valueSelector: Id
         token:
           title: Harness Token
           type: string
