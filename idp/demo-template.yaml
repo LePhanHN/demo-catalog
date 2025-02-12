@@ -38,15 +38,15 @@ spec:
             placeholder: "Choose an AWS Account"
             path: /proxy/demo-api
             valueSelector: Id
-        aws_account_post:
+        vpc_id_post:
           type: string
           ui:field: SelectFieldFromApi
           ui:options:
-            title: AWS Account POST
-            description: Pick one of the AWS Account
-            placeholder: "Choose an AWS Account"
+            title: AWS VPC ID
+            description: Pick one of the VPCs
+            placeholder: "Choose a VPC"
             path: /proxy/demo-api
-            valueSelector: Id
+            valueSelector: VpcId
             request:
               method: POST
               headers:
