@@ -35,7 +35,7 @@ spec:
             title: GitHub Repository
             description: Pick one of the GitHub Repositories
             placeholder: "Choose a Repository"
-            path: proxy/github-api/orgs/{{ parameters.github_org_name }}/repos
+            path: proxy/github-api/users/{{ parameters.github_org_name }}/repos
             valueSelector: full_name
         token:
           title: Harness Token
