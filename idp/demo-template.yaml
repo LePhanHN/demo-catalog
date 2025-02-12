@@ -36,7 +36,7 @@ spec:
             title: AWS Account
             description: Pick one of the AWS Account
             placeholder: "Choose an AWS Account"
-            path: proxy/demo-api%3Faction=listAccounts
+            path: proxy/demo-api?action=listAccounts
             valueSelector: Id
             allowArbitraryValues: true           
         token:
