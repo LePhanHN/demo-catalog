@@ -46,7 +46,7 @@ spec:
             description: Pick one of the VPCs
             placeholder: "Choose a VPC"
             path: proxy/demo-api
-            valueSelector: VpcId
+            valueSelector: Id
             request:
               method: POST
               headers:
