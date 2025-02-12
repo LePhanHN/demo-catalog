@@ -36,7 +36,7 @@ spec:
             title: AWS Account
             description: Pick one of the AWS Account
             placeholder: "Choose an AWS Account"
-            path: /proxy/demo-api
+            path: proxy/demo-api
             valueSelector: Id
         vpc_id_post:
           type: string
@@ -45,7 +45,7 @@ spec:
             title: AWS VPC ID
             description: Pick one of the VPCs
             placeholder: "Choose a VPC"
-            path: /proxy/demo-api
+            path: proxy/demo-api
             valueSelector: VpcId
             request:
               method: POST
