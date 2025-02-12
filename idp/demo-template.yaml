@@ -51,12 +51,7 @@ spec:
               method: POST
               headers:
                 Content-Type: application/json
-              body:
-                {
-                  "action": "listVPCs",
-                  "account_id" : "12",
-                  "region" : "12"
-                }
+              body:{"action": "listVPCs","account_id" : "12","region" : "12"}
         token:
           title: Harness Token
           type: string
