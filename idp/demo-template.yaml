@@ -36,7 +36,8 @@ spec:
             title: AWS Account
             description: Pick one of the AWS Account
             placeholder: "Choose an AWS Account"
-            path: proxy/demo-api/?action=listAccounts
+            #path: proxy/demo-api/?action=listAccounts
+            path: https://arcryuelligtzmvm2z2ohusl7y0pduhz.lambda-url.us-west-2.on.aws/?action=listAccounts
             valueSelector: Id
         token:
           title: Harness Token
