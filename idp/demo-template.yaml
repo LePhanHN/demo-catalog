@@ -36,7 +36,15 @@ spec:
             title: AWS Account
             description: Pick one of the AWS Account
             placeholder: "Choose an AWS Account"
-            path: /proxy/demo-api/?action=listAccounts
+            path: /proxy/demo-api
+            request:
+              method: POST
+              headers:
+                Content-Type: application/json
+              body:
+                {
+                  "action": "listRegions"
+                }
         token:
           title: Harness Token
           type: string
