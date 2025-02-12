@@ -42,7 +42,7 @@ spec:
           type: string
           ui:field: SelectFieldFromApi
           ui:options:
-            title: AWS Account
+            title: AWS Account POST
             description: Pick one of the AWS Account
             placeholder: "Choose an AWS Account"
             path: /proxy/demo-api
