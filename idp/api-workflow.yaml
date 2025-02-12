@@ -3,9 +3,8 @@ kind: Template
 # some metadata about the template itself
 metadata:
   name: Workflows-Quickstart
-  title: Create a New GitHub Repository
-  description: Creates a new GitHub Repository 
-spec:
+  title: Fetch Repository API Example
+  description: Fetch My Repository
   owner: service.owner
   type: service
   # these are the steps which are rendered in the frontend with the form input
