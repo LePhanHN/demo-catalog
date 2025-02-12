@@ -28,6 +28,15 @@ spec:
           title: GitHub Username
           type: string
           description: Add Your GitHub Username 
+        github_repo_api:
+          type: string
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: GitHub Repository
+            description: Pick one of the GitHub Repositories
+            placeholder: "Choose a Repository"
+            path: proxy/github-api/users/LePhanHN/repos
+            valueSelector: full_name    
         token:
           title: Harness Token
           type: string
