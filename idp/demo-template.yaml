@@ -38,6 +38,8 @@ spec:
             placeholder: "Choose an AWS Account"
             path: proxy/demo-api?action=listAccounts
             valueSelector: Id
+            allowArbitraryValues: true
+            arraySelector: '.'            
         vpc_id_post:
           type: string
           ui:field: SelectFieldFromApi
