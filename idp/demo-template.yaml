@@ -37,7 +37,7 @@ spec:
             description: Pick one of the AWS Account
             placeholder: "Choose an AWS Account"
             path: /proxy/demo-api
-            valueSelector: region
+            valueSelector: Id
         token:
           title: Harness Token
           type: string
