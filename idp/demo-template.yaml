@@ -38,6 +38,25 @@ spec:
             placeholder: "Choose an AWS Account"
             path: /proxy/demo-api
             valueSelector: Id
+        aws_account_post:
+          type: string
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: AWS Account
+            description: Pick one of the AWS Account
+            placeholder: "Choose an AWS Account"
+            path: /proxy/demo-api
+            valueSelector: Id
+            request:
+              method: POST
+              headers:
+                Content-Type: text/json 
+              body:
+                {
+                  "action": "listVPCs",
+                  "account_id" : "12",
+                  "region" : "12"
+                }
         token:
           title: Harness Token
           type: string
