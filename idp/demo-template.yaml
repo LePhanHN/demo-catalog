@@ -45,7 +45,7 @@ spec:
             title: AWS VPC ID
             description: Pick one of the VPCs
             placeholder: "Choose a VPC"
-            path: /proxy/demo-api
+            path: /api/proxy/demo-api
             valueSelector: VpcId
             request:
               method: POST
