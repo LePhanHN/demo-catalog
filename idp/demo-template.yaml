@@ -50,7 +50,7 @@ spec:
             request:
               method: POST
               headers:
-                Content-Type: text/json 
+                Content-Type: application/json
               body:
                 {
                   "action": "listVPCs",
