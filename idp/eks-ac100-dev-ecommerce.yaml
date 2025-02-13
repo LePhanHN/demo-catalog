@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dev-ecommerce
+  description: test
+  aws_account: ac100
+
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: EKS
+  owner: abc
+  lifecycle: experimental
