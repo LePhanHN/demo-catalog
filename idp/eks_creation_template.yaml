@@ -26,7 +26,20 @@ spec:
             params:
               action: "listAccounts"
             valueSelector: "Id"
-            allowArbitraryValues: true            
+            allowArbitraryValues: true 
+        aws_region:
+          type: string
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: AWS Region
+            description: Pick one of the Region
+            placeholder: "Choose the region"
+            path: proxy/demo-api
+            params: 
+              action: "getAccountRegion"
+              account: {{parameters.aws_account}} 
+            valueSelector: "region"
+            allowArbitraryValues: true
         token:
           title: Harness Token
           type: string
