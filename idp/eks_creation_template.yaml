@@ -46,6 +46,7 @@ spec:
             valueSelector: "region"
             allowArbitraryValues: true
     - title: Page-3
+      properties:
         aws_vpc:
           type: string
           ui:field: SelectFieldFromApi
