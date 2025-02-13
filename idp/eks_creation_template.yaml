@@ -32,17 +32,17 @@ spec:
           ui:field: HarnessAuthToken  
     - title: Page-2
       properties:
-        aws_account:
+        aws_region:
           type: string
           ui:field: SelectFieldFromApi
           ui:options:
-            title: AWS Account
-            description: Pick one of the AWS Account
-            placeholder: "Choose an AWS Account"
+            title: AWS Region
+            description: Pick Region
+            placeholder: "Choose a region"
             path: proxy/demo-api
             params:
-              action: "listAccounts"
-            valueSelector: "Id"
+              action: "getAccountRegion"
+            valueSelector: "region"
             allowArbitraryValues: true 
   steps:
     - id: trigger
