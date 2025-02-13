@@ -10,6 +10,19 @@ metadata:
 
   annotations:
     backstage.io/techdocs-ref: dir:.
+
+
+  links:
+    - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-self-service-creation
+      title: Upgrade
+      type: admin-dashboard
+    - url: https://admin.example-org.com
+      title: Monitor
+      type: admin-dashboard
+    - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-self-service-creation
+      title: Delete
+      type: admin-dashboard
+
 spec:
   type: EKS
   owner: abc
