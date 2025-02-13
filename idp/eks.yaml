@@ -9,5 +9,5 @@ metadata:
     backstage.io/techdocs-ref: dir:.
 spec:
   type: EKS
-  owner: null
+  owner: abc
   lifecycle: experimental
