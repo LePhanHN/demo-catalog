@@ -11,7 +11,7 @@ spec:
   owner: service.owner
   type: service
   parameters:
-    - title: Fill in the repo details
+    - title: Page-1
       required:
         - aws_account
       properties:
@@ -44,7 +44,24 @@ spec:
           title: Harness Token
           type: string
           ui:widget: password
-          ui:field: HarnessAuthToken       
+          ui:field: HarnessAuthToken  
+      - title: Page-2
+      required:
+        - aws_region
+      properties:
+        aws_region:
+          type: string
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: AWS Region
+            description: Pick one of the Region
+            placeholder: "Choose the region"
+            path: proxy/demo-api
+            params: 
+              action: "getAccountRegion"
+              account: {{parameters.aws_account}} 
+            valueSelector: "region"
+            allowArbitraryValues: true
   steps:
     - id: trigger
       name: Create-eks-cluster
