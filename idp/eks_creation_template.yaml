@@ -26,7 +26,14 @@ spec:
             params:
               action: "listAccounts"
             valueSelector: "Id"
-            allowArbitraryValues: true 
+            allowArbitraryValues: true
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
+          ui:options:
+            allowArbitraryValues: true
         token:
           title: "Harness Token"
           type: string
@@ -107,6 +114,7 @@ spec:
           aws_env_type: ${{ parameters.aws_env_type }}
           aws_description: ${{ parameters.aws_description }}
           aws_node_type: ${{ parameters.aws_node_type }}
+          owner: ${{ parameter.owner }}
 
         apikey: ${{ parameters.token }}
         showOutputVariables: true
