@@ -42,6 +42,7 @@ spec:
             path: proxy/demo-api
             params:
               action: "getAccountRegion"
+              account_id: "aa"
             valueSelector: "region"
             allowArbitraryValues: true 
   steps:
