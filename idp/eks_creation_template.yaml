@@ -12,6 +12,8 @@ spec:
   type: service
   parameters:
     - title: Page-1
+      required:
+        - aws_account
       properties:
         aws_account:
           type: string
@@ -31,6 +33,8 @@ spec:
           ui:widget: password
           ui:field: HarnessAuthToken  
     - title: Page-2
+      required:
+      - aws_region
       properties:
         aws_region:
           type: string
@@ -46,6 +50,11 @@ spec:
             valueSelector: "region"
             allowArbitraryValues: true
     - title: Page-3
+      required:
+      - aws_vpc
+      - aws_eks_nane
+      - aws_env_type
+      - aws_node_type
       properties:
         aws_vpc:
           type: string
