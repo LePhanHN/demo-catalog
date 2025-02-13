@@ -42,7 +42,7 @@ spec:
             path: proxy/demo-api
             params:
               action: "getAccountRegion"
-              account_id: "aa"
+              account_id: {{parameters.aws_account}}
             valueSelector: "region"
             allowArbitraryValues: true 
   steps:
