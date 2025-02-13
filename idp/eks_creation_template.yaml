@@ -5,6 +5,9 @@ metadata:
   title: Create EKS Cluster
   description: Create EKS Cluster
 spec:
+  tag:
+    self-service
+    eks
   owner: service.owner
   type: service
   parameters:
