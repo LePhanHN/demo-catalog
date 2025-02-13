@@ -114,8 +114,7 @@ spec:
           aws_env_type: ${{ parameters.aws_env_type }}
           aws_description: ${{ parameters.aws_description }}
           aws_node_type: ${{ parameters.aws_node_type }}
-          owner: ${{ parameter.owner }}
-
+          owner: ${{ parameters.owner }}
         apikey: ${{ parameters.token }}
         showOutputVariables: true
   output:
