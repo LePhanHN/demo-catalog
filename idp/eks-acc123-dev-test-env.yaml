@@ -1,0 +1,29 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dev-test-env
+  description: production test
+  aws_account: acc123
+  aws_env_type: prod
+  aws_node_type: t3.large
+  aws_region: us-west-1
+
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+
+
+  links:
+    - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-self-service-creation
+      title: Upgrade
+      type: admin-dashboard
+    - url: https://admin.example-org.com
+      title: Monitor
+      type: admin-dashboard
+    - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-self-service-creation
+      title: Delete
+      type: admin-dashboard
+
+spec:
+  type: EKS
+  owner: group:default/adgroup1
+  lifecycle: experimental
