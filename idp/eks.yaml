@@ -1,11 +1,13 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
-  name: eks-test
+  name: dev-eks-1
   description: test
+  aws_account: 1123
+
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
-  type: service
+  type: EKS
   owner: null
   lifecycle: experimental
