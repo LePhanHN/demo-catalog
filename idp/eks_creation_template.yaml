@@ -9,9 +9,9 @@ spec:
     self-service
     eks
   owner: service.owner
-  type: service
+  type: resource
   parameters:
-    - title: Page-1
+    - title: Account
       required:
         - aws_account
       properties:
@@ -32,7 +32,7 @@ spec:
           type: string
           ui:widget: password
           ui:field: HarnessAuthToken  
-    - title: Page-2
+    - title: Region
       required:
       - aws_region
       properties:
@@ -49,7 +49,7 @@ spec:
               account_id: "{{parameters.aws_account}}"
             valueSelector: "region"
             allowArbitraryValues: true
-    - title: Page-3
+    - title: VPC / Cluster config
       required:
       - aws_vpc
       - aws_eks_nane
@@ -99,6 +99,13 @@ spec:
         url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/ci/orgs/default/projects/DirectTVDemo/pipelines/GitHub_Repository_Onboarding_Clone_Clone/pipeline-studio?storeType=INLINE
         inputset:
           aws_account: ${{ parameters.aws_account }}
+          aws_region: ${{ parameters.aws_region }}
+          aws_vpc: ${{ parameters.aws_vpc }}
+          aws_eks_nane: ${{ parameters.aws_eks_nane }}
+          aws_env_type: ${{ parameters.aws_env_type }}
+          aws_description: ${{ parameters.aws_description }}
+          aws_node_type: ${{ parameters.aws_node_type }}
+
         apikey: ${{ parameters.token }}
         showOutputVariables: true
   output:
