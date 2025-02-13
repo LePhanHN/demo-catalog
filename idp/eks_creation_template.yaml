@@ -1,0 +1,60 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: EKS-self-service-creation
+  title: Create EKS Cluster
+  description: Create EKS Cluster
+spec:
+  owner: service.owner
+  type: service
+  parameters:
+    - title: Fill in the repo details
+      required:
+        - aws_account
+      properties:
+        aws_account:
+          type: string
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: AWS Account
+            description: Pick one of the AWS Account
+            placeholder: "Choose an AWS Account"
+            path: proxy/demo-api
+            params:
+              action: "listAccounts"
+            valueSelector: "Id"
+            allowArbitraryValues: true           
+        token:
+          title: Harness Token
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken       
+  steps:
+    - id: trigger
+      name: Create-eks-cluster
+      action: trigger:harness-custom-pipeline
+      input:
+        url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/ci/orgs/default/projects/DirectTVDemo/pipelines/GitHub_Repository_Onboarding_Clone_Clone/pipeline-studio?storeType=INLINE
+        inputset:
+          aws_account: ${{ parameters.aws_account }}
+        apikey: ${{ parameters.token }}
+        showOutputVariables: true
+  output:
+    links:
+      - title: Pipeline Details
+        url: ${{ steps.trigger.output.PipelineUrl }}
+    text:
+      - title: Outputs
+        content: |
+          return: ${{steps.trigger.output.RETURN_VAL}},github_org_name: ${{ parameters.github_org_name}},github_repo_name: ${{ parameters.github_repo_name}}
+          
+          
+          
+
+
+
+
+
+          
+
+
