@@ -58,7 +58,7 @@ spec:
             params:
               action: "getVPC"
               account_id: "{{parameters.aws_account}}"
-              account_id: "{{parameters.aws_region}}"
+              region: "{{parameters.aws_region}}"
             valueSelector: "vpc_id"
             allowArbitraryValues: true
           aws_eks_nane:
