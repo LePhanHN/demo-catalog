@@ -49,8 +49,8 @@ spec:
             path: proxy/harness-api/ng/api/user-groups/filter?accountIdentifier=278oQOylSUWVALR6dOgnhg
             request:
               method: POST
-              headers:
-                    Content-Type: application/json
+            #  headers:
+            #        Content-Type: application/json
               body:
                 {
                     "userIdentifierFilter": [
