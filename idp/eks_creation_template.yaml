@@ -32,10 +32,10 @@ spec:
           type: string
           description: Owner of the component
           ui:field: OwnerPicker
-        ui:options:
-          catalogFilter:
-            - kind: Group
-          defaultNamespace: default
+          ui:options:
+            catalogFilter:
+              - kind: Group
+            defaultNamespace: default
         token:
           title: "Harness Token"
           type: string
