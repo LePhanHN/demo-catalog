@@ -43,17 +43,10 @@ spec:
             title: "Harness Groups"
             description: "Pick one of the Group"
             placeholder: "Choose a group"
-            path: proxy/harness-api/ng/api/user-groups
-            params:
-              accountIdentifier: 278oQOylSUWVALR6dOgnhg
-              searchTerm: "AD-"
-              filterType: EXCLUDE_INHERITED_GROUPS
-              pageIndex: 0
-              pageSize: 50
-            arraySelector: data.content
-            valueSelector: "identifier"
-            allowArbitraryValues: true        
-        token:
+            path: path: proxy/harness-api-endpoint/ng/api/servicesV2?page=0&size=100&accountIdentifier=278oQOylSUWVALR6dOgnhg&includeAllServicesAccessibleAtScope=true
+            valueSelector: 'service.name'
+            arraySelector: 'data.content'
+             token:
           title: "Harness Token"
           type: string
           ui:widget: password
