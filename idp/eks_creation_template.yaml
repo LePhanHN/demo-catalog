@@ -36,6 +36,16 @@ spec:
             catalogFilter:
               - kind: Group
             defaultNamespace: default
+        harness_group:
+          type: string
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: "Harness Groups"
+            description: "Pick one of the Group"
+            placeholder: "Choose a group"
+            path: path: proxy/harness-api-endpoint/ng/api/servicesV2?page=0&size=100&accountIdentifier=278oQOylSUWVALR6dOgnhg&includeAllServicesAccessibleAtScope=true
+            valueSelector: 'service.name'
+            arraySelector: 'data.content'
         token:
           title: "Harness Token"
           type: string
