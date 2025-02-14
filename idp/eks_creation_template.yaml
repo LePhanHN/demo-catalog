@@ -50,7 +50,6 @@ spec:
               filterType: EXCLUDE_INHERITED_GROUPS
               pageIndex: 0
               pageSize: 50
-            valueSelector: .
             allowArbitraryValues: true        
         token:
           title: "Harness Token"
