@@ -31,11 +31,7 @@ spec:
           title: Owner
           type: string
           description: Owner of the component
-          ui:field: OwnerPicker
-          ui:options:
-            catalogFilter:
-              - kind: Group
-            defaultNamespace: default
+          ui:field: MyGroupsPicker
         harness_group:
           type: string
           ui:field: SelectFieldFromApi
