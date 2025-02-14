@@ -46,7 +46,7 @@ spec:
             #path: proxy/harness-api/ng/api/servicesV2?page=0&size=100&accountIdentifier=278oQOylSUWVALR6dOgnhg&includeAllServicesAccessibleAtScope=true
             #valueSelector: 'service.name'
             #arraySelector: 'data.content'
-            path: proxy/harness-api/ng/api/user-groups/filter?accountIdentifier=278oQOylSUWVALR6dOgnhg&pageIndex=0&pageSize=50
+            path: proxy/harness-api/ng/api/user-groups/filter?accountIdentifier=278oQOylSUWVALR6dOgnhg&pageIndex=0&pageSize=50&sortOrders=fieldName%3Dstring%26orderType%3DASC&pageToken=string
             request:
               method: POST
               headers:
