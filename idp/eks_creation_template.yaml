@@ -52,15 +52,14 @@ spec:
               headers:
                     Content-Type: application/json
               body:
-                secret: 
-                  {
-                      "userIdentifierFilter": [
-                        "WQIgPE9bQO-Sf4xjLFvI0w"
-                      ],
-                      "accountIdentifier": "278oQOylSUWVALR6dOgnhg",
-                      "searchTerm": "AD-",
-                      "filterType": "INCLUDE_INHERITED_GROUPS"
-                  }
+                {
+                    "userIdentifierFilter": [
+                      "WQIgPE9bQO-Sf4xjLFvI0w"
+                    ],
+                    "accountIdentifier": "278oQOylSUWVALR6dOgnhg",
+                    "searchTerm": "AD-",
+                    "filterType": "INCLUDE_INHERITED_GROUPS"
+                }
         token:
           title: "Harness Token"
           type: string
