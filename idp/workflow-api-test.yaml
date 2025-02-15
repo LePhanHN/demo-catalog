@@ -25,7 +25,8 @@ spec:
             path: proxy/harness-api/ng/api/user/currentUser  
             params:
               accountIdentifier: "<+account.identifier>"
-            valueSelector: '.'         
+            valueSelector: 'uuid'
+            arraySelector: 'data'      
         owner:
           title: Owner
           type: string
