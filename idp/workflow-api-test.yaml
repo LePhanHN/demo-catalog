@@ -15,26 +15,32 @@ spec:
 #      required:
 #        - owner
       properties:
+        token:
+          title: "Harness Token"
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken      
         user_identifier:
           type: string
-          ui:field: SelectFieldFromApi       
+          ui:field: SelectFieldFromApi
           ui:options:
-            title: "UserIdentifier"
-            description: ""
-            placeholder: ""
-            path: proxy/harness-api/ng/api/user/currentUser  
+            title: "user_identifier"
+            description: "user_identifier"
+            placeholder: "Choose a group"
+            path: proxy/harness-api/ng/api/user/currentUser
             params:
-              accountIdentifier: "<+account.identifier>"  
+              accountIdentifier: "<+account.identifier>"
+            request: 
+              method: GET
+              headers: 
+                Content-Type: application/json
+                x-api-key: {{parameters.token}}
+            valueSelector: 'status'   
         owner:
           title: Owner
           type: string
           description: Owner of the component
           ui:field: MyGroupsPicker
-        token:
-          title: "Harness Token"
-          type: string
-          ui:widget: password
-          ui:field: HarnessAuthToken
     - title: "Page2"
 #      required:
 #        - harness_group
