@@ -34,7 +34,7 @@ spec:
               method: GET
               headers: 
                 Content-Type: application/json
-                x-api-key: {{parameters.token}}
+                x-api-key: ${{ parameters.token }}
             valueSelector: 'status'   
         owner:
           title: Owner
@@ -61,7 +61,7 @@ spec:
               method: POST
               headers: 
                 Content-Type: application/json
-                x-api-key: {{parameters.token}}
+                x-api-key: ${{ parameters.token }}
               body: 
                 "searchTerm": "AD-"
                 "userIdentifierFilter":
