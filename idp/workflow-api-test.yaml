@@ -1,0 +1,98 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: workflow-api-test
+  title: workflow-api-test
+  description: workflow-api-test
+spec:
+  tag:
+    self-service
+    eks
+  owner: service.owner
+  type: resource
+  parameters:
+    - title: "Account"
+      required:
+        - aws_account
+      properties:
+        aws_account:
+          type: string
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: "AWS Account"
+            description: 
+            placeholder: "Choose an AWS Account"
+            path: proxy/demo-api
+            params:
+              action: "listAccounts"
+            valueSelector: "Id"
+            allowArbitraryValues: true
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: MyGroupsPicker
+        token:
+          title: "Harness Token"
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken  
+    - title: "Region"
+      required:
+      - aws_region
+      properties:
+        harness_group:
+          type: string
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: "Harness Groups"
+            description: "Pick one of the Group"
+            placeholder: "Choose a group"
+            path: proxy/harness-api/ng/api/user-groups/filter
+            params:
+              pageIndex: "0"
+              pageSize: "50"
+              accountIdentifier: "<+account.identifier>"
+            request: 
+              method: POST
+              headers: 
+                Content-Type: application/json
+              body: 
+                "searchTerm": "AD-"
+                "userIdentifierFilter":
+                  - "WQIgPE9bQO-Sf4xjLFvI0w"
+                "accountIdentifier": "<+account.identifier>"
+                #"orgIdentifier": "default"
+                "filterType": "INCLUDE_INHERITED_GROUPS"
+              valueSelector: 'name'
+              arraySelector: 'data.content'            
+  steps:
+    - id: trigger
+      name: Create-eks-cluster
+      action: trigger:harness-custom-pipeline
+      input:
+        url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp-admin/orgs/default/projects/DirectTVDemo/pipelines/createeks/pipeline-studio?storeType=INLINE
+        inputset:
+          aws_account: ${{ parameters.aws_account }}
+          aws_region: ${{ parameters.aws_region }}
+          aws_vpc: ${{ parameters.aws_vpc }}
+          aws_eks_nane: ${{ parameters.aws_eks_nane }}
+          aws_env_type: ${{ parameters.aws_env_type }}
+          aws_description: ${{ parameters.aws_description }}
+          aws_node_type: ${{ parameters.aws_node_type }}
+          owner: ${{ parameters.owner }}
+        apikey: ${{ parameters.token }}
+        showOutputVariables: true
+  output:
+    links:
+      - title: Pipeline Details
+        url: ${{ steps.trigger.output.PipelineUrl }}
+          
+          
+          
+
+
+
+
+
+          
