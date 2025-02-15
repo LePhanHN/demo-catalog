@@ -32,30 +32,31 @@ spec:
           type: string
           description: Owner of the component
           ui:field: MyGroupsPicker
-        harness_group:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            title: "Harness Groups"
-            description: "Pick one of the Group"
-            placeholder: "Choose a group"
-            #path: proxy/harness-api/ng/api/servicesV2?page=0&size=100&accountIdentifier=278oQOylSUWVALR6dOgnhg&includeAllServicesAccessibleAtScope=true
-            #valueSelector: 'service.name'
-            #arraySelector: 'data.content'
-            path: proxy/harness-api/ng/api/user-groups/filter?accountIdentifier=278oQOylSUWVALR6dOgnhg
-            request:
-              method: POST
-            #  headers:
-            #        Content-Type: application/json
-              body:
-                {
-                    "userIdentifierFilter": [
-                      "WQIgPE9bQO-Sf4xjLFvI0w"
-                    ],
-                    "accountIdentifier": "278oQOylSUWVALR6dOgnhg",
-                    "searchTerm": "AD-",
-                    "filterType": "INCLUDE_INHERITED_GROUPS"
-                }
+      harness_group:
+        type: string
+        ui:field: SelectFieldFromApi
+        ui:options:
+          title: "Harness Groups"
+          description: "Pick one of the Group"
+          placeholder: "Choose a group"
+          path: proxy/harness-api/ng/api/user-groups/filter
+          params:
+            pageIndex: "0"
+            pageSize: "50"
+            accountIdentifier: "278oQOylSUWVALR6dOgnhg"
+          request: 
+            method: POST
+            headers: 
+              Content-Type: application/json
+            body: 
+              "searchTerm": "AD-",
+              "userIdentifierFilter":
+                - "WQIgPE9bQO-Sf4xjLFvI0w"
+              "accountIdentifier": "278oQOylSUWVALR6dOgnhg",
+              "orgIdentifier": "default",
+              "filterType": "INCLUDE_INHERITED_GROUPS"
+          valueSelector: 'name'
+          arraySelector: 'data.content'
         token:
           title: "Harness Token"
           type: string
