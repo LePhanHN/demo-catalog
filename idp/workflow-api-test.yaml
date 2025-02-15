@@ -35,7 +35,8 @@ spec:
               headers: 
                 Content-Type: application/json
                 x-api-key: {{ parameters.token }}
-            valueSelector: 'status'   
+            valueSelector: 'uuid'
+            arraySelector: 'data'   
         owner:
           title: Owner
           type: string
