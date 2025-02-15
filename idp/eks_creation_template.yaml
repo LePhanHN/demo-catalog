@@ -49,7 +49,7 @@ spec:
               headers: 
                 Content-Type: application/json
               body: 
-                #"searchTerm": "AD-"
+                "searchTerm": "AD-"
                 "userIdentifierFilter":
                   - "WQIgPE9bQO-Sf4xjLFvI0w"
                 "accountIdentifier": "<+account.identifier>"
