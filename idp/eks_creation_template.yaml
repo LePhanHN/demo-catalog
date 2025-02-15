@@ -20,7 +20,7 @@ spec:
           ui:field: SelectFieldFromApi
           ui:options:
             title: "AWS Account"
-            description: <+account.identifier>,<+project.identifier>,<+project.identifier>, {{parameters.projectId}}, {{parameters.userId}}
+            description: 
             placeholder: "Choose an AWS Account"
             path: proxy/demo-api
             params:
@@ -32,6 +32,25 @@ spec:
           type: string
           description: Owner of the component
           ui:field: MyGroupsPicker
+        user_identifier:
+          type: string
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: "AWS Account"
+            description: 
+            placeholder: "Choose an AWS Account"
+            path: proxy/harness-api/ng/api/user/currentUser?accountIdentifier=<+account.identifier>
+            valueSelector: 'uuid'
+            arraySelector: 'data'         
+        token:
+          title: "Harness Token"
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken  
+    - title: "Region"
+      required:
+      - aws_region
+      properties:
         harness_group:
           type: string
           ui:field: SelectFieldFromApi
@@ -56,16 +75,7 @@ spec:
                 #"orgIdentifier": "default"
                 "filterType": "INCLUDE_INHERITED_GROUPS"
             valueSelector: 'name'
-            arraySelector: 'data.content'
-        token:
-          title: "Harness Token"
-          type: string
-          ui:widget: password
-          ui:field: HarnessAuthToken  
-    - title: "Region"
-      required:
-      - aws_region
-      properties:
+            arraySelector: 'data.content'      
         aws_region:
           type: string
           ui:field: SelectFieldFromApi
