@@ -22,10 +22,10 @@ spec:
             title: "UserIdentifier"
             description: ""
             placeholder: ""
-            path: proxy/harness-api/ng/api/user/currentUser
+            path: proxy/harness-api/ng/api/user/currentUser?
             params:
               accountIdentifier: "<+account.identifier>"
-            valueSelector: 'uuid'            
+            valueSelector: '.'            
         owner:
           title: Owner
           type: string
