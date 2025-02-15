@@ -32,16 +32,7 @@ spec:
           type: string
           description: Owner of the component
           ui:field: MyGroupsPicker
-        user_identifier:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            title: "AWS Account"
-            description: 
-            placeholder: "Choose an AWS Account"
-            path: proxy/harness-api/ng/api/user/currentUser?accountIdentifier=<+account.identifier>
-            #valueSelector: 'uuid'
-            #arraySelector: 'data'         
+     
         token:
           title: "Harness Token"
           type: string
