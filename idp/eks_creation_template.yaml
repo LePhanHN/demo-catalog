@@ -40,8 +40,8 @@ spec:
             description: 
             placeholder: "Choose an AWS Account"
             path: proxy/harness-api/ng/api/user/currentUser?accountIdentifier=<+account.identifier>
-            valueSelector: 'uuid'
-            arraySelector: 'data'         
+            #valueSelector: 'uuid'
+            #arraySelector: 'data'         
         token:
           title: "Harness Token"
           type: string
