@@ -53,7 +53,7 @@ spec:
                 "userIdentifierFilter":
                   - "WQIgPE9bQO-Sf4xjLFvI0w"
                 "accountIdentifier": "<+account.identifier>"
-                "orgIdentifier": "default"
+                #"orgIdentifier": "default"
                 "filterType": "INCLUDE_INHERITED_GROUPS"
             valueSelector: 'name'
             arraySelector: 'data.content'
