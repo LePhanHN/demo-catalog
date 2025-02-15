@@ -36,36 +36,7 @@ spec:
           title: "Harness Token"
           type: string
           ui:widget: password
-          ui:field: HarnessAuthToken  
-    - title: "Region"
-      required:
-      - aws_region
-      properties:
-        harness_group:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            title: "Harness Groups"
-            description: "Pick one of the Group"
-            placeholder: "Choose a group"
-            path: proxy/harness-api/ng/api/user-groups/filter
-            params:
-              pageIndex: "0"
-              pageSize: "50"
-              accountIdentifier: "<+account.identifier>"
-            request: 
-              method: POST
-              headers: 
-                Content-Type: application/json
-              body: 
-                "searchTerm": "AD-"
-                "userIdentifierFilter":
-                  - "WQIgPE9bQO-Sf4xjLFvI0w"
-                "accountIdentifier": "<+account.identifier>"
-                #"orgIdentifier": "default"
-                "filterType": "INCLUDE_INHERITED_GROUPS"
-              valueSelector: 'name'
-              arraySelector: 'data.content'            
+          ui:field: HarnessAuthToken    
   steps:
     - id: trigger
       name: Create-eks-cluster
