@@ -15,19 +15,18 @@ spec:
 #      required:
 #        - owner
       properties:
-        aws_account:
+        user_identifier:
           type: string
           ui:field: SelectFieldFromApi
+          valueSelector: 'uuid'
+          arraySelector: 'data'           
           ui:options:
-            title: "AWS Account"
-            description: "Pick one of the AWS Account"
-            placeholder: "Choose an AWS Account"
-            path: proxy/demo-api
-            params:
-              action: "listAccounts"
+            title: "UserIdentifier"
+            description: ""
+            placeholder: ""
+            path: proxy/harness-api/ng/api/user/currentUser?accountIdentifier=<+account.identifier>' 
             valueSelector: "Id"
-            allowArbitraryValues: true      
-          
+             
         owner:
           title: Owner
           type: string
