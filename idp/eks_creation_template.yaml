@@ -49,10 +49,7 @@ spec:
             headers: 
               Content-Type: application/json
             body: 
-            {
-              "searchTerm": "AD-",
-              "accountIdentifier": "<+account.identifier>"
-            }
+              "searchTerm": "AD-", "accountIdentifier": "<+account.identifier>"
           valueSelector: 'name'
           arraySelector: 'data.content'
         token:
