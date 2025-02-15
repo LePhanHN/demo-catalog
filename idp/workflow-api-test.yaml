@@ -11,7 +11,7 @@ spec:
   owner: service.owner
   type: resource
   parameters:
-    - title: "Account"
+    - title: "Page1"
       required:
       properties:
         owner:
@@ -24,9 +24,8 @@ spec:
           type: string
           ui:widget: password
           ui:field: HarnessAuthToken
-    - title: "Region"
+    - title: "Page2"
       required:
-      - aws_region
       properties:
         harness_group:
           type: string
