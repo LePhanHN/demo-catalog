@@ -24,7 +24,7 @@ spec:
             title: "UserIdentifier"
             description: ""
             placeholder: ""
-            path: proxy/harness-api/ng/api/user/currentUser?accountIdentifier=<+account.identifier>' 
+            path: proxy/harness-api/ng/api/user/currentUser?accountIdentifier=<+account.identifier>
             valueSelector: "Id"
              
         owner:
