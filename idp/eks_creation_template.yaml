@@ -20,7 +20,7 @@ spec:
           ui:field: SelectFieldFromApi
           ui:options:
             title: "AWS Account"
-            description: <+account.identifier>,<+project.identifier>,<+project.identifier>, {{parameters.projectId}}, {{parameters.userId}}
+            #description: <+account.identifier>,<+project.identifier>,<+project.identifier>, {{parameters.projectId}}, {{parameters.userId}}
             placeholder: "Choose an AWS Account"
             path: proxy/demo-api
             params:
