@@ -13,7 +13,6 @@ spec:
   parameters:
     - title: "Account"
       required:
-        - aws_account
       properties:
         owner:
           title: Owner
