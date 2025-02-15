@@ -27,7 +27,7 @@ spec:
               action: "listAccounts"
             valueSelector: "Id"
             allowArbitraryValues: true      
-        harness_group1:
+        harness_group:
           type: string
           ui:field: SelectFieldFromApi
           ui:options:
@@ -38,7 +38,7 @@ spec:
             params:
               pageIndex: "0"
               pageSize: "50"
-              accountIdentifier: "<+account.identifier>"
+              accountIdentifier: "278oQOylSUWVALR6dOgnhg"
             request: 
               method: POST
               headers: 
@@ -47,11 +47,11 @@ spec:
                 "searchTerm": "AD-"
                 "userIdentifierFilter":
                   - "WQIgPE9bQO-Sf4xjLFvI0w"
-                "accountIdentifier": "<+account.identifier>"
+                "accountIdentifier": "278oQOylSUWVALR6dOgnhg"
                 #"orgIdentifier": "default"
                 "filterType": "INCLUDE_INHERITED_GROUPS"
-              valueSelector: 'name'
-              arraySelector: 'data.content'                
+            valueSelector: 'name'
+            arraySelector: 'data.content'            
         owner:
           title: Owner
           type: string
