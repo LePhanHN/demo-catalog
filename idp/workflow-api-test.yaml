@@ -47,7 +47,7 @@ spec:
                 "searchTerm": "AD-"
                 "userIdentifierFilter":
                   - "WQIgPE9bQO-Sf4xjLFvI0w"
-                "accountIdentifier": "278oQOylSUWVALR6dOgnhg"
+                "accountIdentifier": "<+account.identifier>"
                 #"orgIdentifier": "default"
                 "filterType": "INCLUDE_INHERITED_GROUPS"
             valueSelector: 'name'
