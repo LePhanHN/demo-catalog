@@ -32,7 +32,6 @@ spec:
           type: string
           description: Owner of the component
           ui:field: MyGroupsPicker
-     
         token:
           title: "Harness Token"
           type: string
