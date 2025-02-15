@@ -12,8 +12,8 @@ spec:
   type: resource
   parameters:
     - title: "Page1"
-      required:
-        - owner
+#      required:
+#        - owner
       properties:
         owner:
           title: Owner
@@ -26,8 +26,8 @@ spec:
           ui:widget: password
           ui:field: HarnessAuthToken
     - title: "Page2"
-      required:
-        - harness_group
+#      required:
+#        - harness_group
       properties:
         harness_group:
           type: string
