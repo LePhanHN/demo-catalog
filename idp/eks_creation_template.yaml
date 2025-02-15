@@ -50,8 +50,8 @@ spec:
                 Content-Type: application/json
               body: 
                 "searchTerm": "AD-"
-                "userIdentifierFilter":
-                  - "WQIgPE9bQO-Sf4xjLFvI0w"
+#                "userIdentifierFilter":
+#                  - "WQIgPE9bQO-Sf4xjLFvI0w"
                 "accountIdentifier": "278oQOylSUWVALR6dOgnhg"
                 "orgIdentifier": "default"
                 "filterType": "INCLUDE_INHERITED_GROUPS"
