@@ -55,6 +55,7 @@ spec:
               method: POST
               headers: 
                 Content-Type: application/json
+                x-api-key: {{parameters.token}}
               body: 
                 "searchTerm": "AD-"
                 "userIdentifierFilter":
