@@ -15,14 +15,6 @@ spec:
 #      required:
 #        - owner
       properties:
-        user_identifier:
-          type: string
-          ui:field: SelectFieldFromApi       
-          ui:options:
-            title: "UserIdentifier"
-            description: ""
-            placeholder: ""
-            path: proxy/harness-api/ng/api/user/currentUser?accountIdentifier=<+account.identifier>     
         owner:
           title: Owner
           type: string
