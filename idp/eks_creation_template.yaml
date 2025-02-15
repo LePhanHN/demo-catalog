@@ -64,8 +64,8 @@ spec:
                 "accountIdentifier": "<+account.identifier>"
                 #"orgIdentifier": "default"
                 "filterType": "INCLUDE_INHERITED_GROUPS"
-            valueSelector: 'name'
-            arraySelector: 'data.content'      
+              valueSelector: 'name'
+              arraySelector: 'data.content'      
         aws_region:
           type: string
           ui:field: SelectFieldFromApi
