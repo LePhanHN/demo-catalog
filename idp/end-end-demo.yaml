@@ -51,10 +51,10 @@ spec:
     links:
       - title: Pipeline Details
         url: ${{ steps.trigger.output.PipelineUrl }}
-      - title: EKS Component
+      - title: EKS source
         url: ${{ steps.trigger.output['pipeline.stages.registercatalog.spec.execution.steps.RegisterCatalog_1.output.outputVariables.catalogInfoUrl'] }}
-
-
+      - title: EKS Component
+        url: ${{ steps.trigger.output['pipeline.stages.registercatalog.spec.execution.steps.CreateCatalog_1.output.outputVariables.registeredCatalogUrl'] }}
 
         
 
