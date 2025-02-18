@@ -1,0 +1,240 @@
+pipeline:
+  projectIdentifier: DirectTVDemo
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: fetchvars
+        identifier: fetchvars
+        description: ""
+        type: IDP
+        spec:
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: account.accountlevelcluster
+              namespace: test
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: GitClone
+                  name: role-config-repository
+                  identifier: roleconfigrepository
+                  spec:
+                    connectorRef: account.LephanHH
+                    repoName: demo-catalog
+                    cloneDirectory: /harness/demo-catalog
+                    build:
+                      type: branch
+                      spec:
+                        branch: dev
+              - step:
+                  type: Run
+                  name: extract-vars
+                  identifier: extractvars
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: python:alpine3.21
+                    shell: Sh
+                    command: |-
+                      pip install  pyyaml requests
+
+                      cat <<EOL > /harness/fetch_env_vars.py
+
+
+                      import yaml
+                      import argparse
+                      import os
+
+                      def parse_and_export_env(file_path, ad_key, output_file):
+                          if not os.path.exists(file_path):
+                              raise FileNotFoundError(f"Error: The YAML file '{file_path}' does not exist.  Role has not been configured with env vars.")
+
+                          with open(file_path, 'r') as file:
+                              data = yaml.safe_load(file) or {}  # Default to an empty dictionary if YAML is empty
+
+                          if ad_key not in data:
+                              raise KeyError(f"Error: The key '{ad_key}' was not found in '{file_path}'.  The yaml may not have matching role configured.")
+
+                          with open(output_file, 'w') as outfile:
+                              for key, value in data[ad_key].items():
+                                  outfile.write(f"{key}={value}\n")
+                                  print(f"Written to file: {key}={value}")
+
+                      if __name__ == "__main__":
+                          parser = argparse.ArgumentParser(description="Set env variables from YAML")
+                          parser.add_argument("--base_path", required=True, help="Base path to the role YAMLs")
+                          parser.add_argument("--role", required=True, help="Role to lookup")
+                          parser.add_argument("--output_file", required=True, help="Path to the output file to write environment variables")
+                          
+                          args = parser.parse_args()
+
+                          #using role key
+                          role_extraction = args.role.split("group:default/")[-1]
+
+                          #expecting lowercase key
+                          role_to_cfg = f"{args.base_path}/{role_extraction}.yaml"
+
+                          print(f"Path to config: {role_to_cfg}")
+                          print(f"Output file: {args.output_file}")
+
+                          try:
+                              parse_and_export_env(role_to_cfg, role_extraction, args.output_file)
+                          except (FileNotFoundError, KeyError) as e:
+                              print(e)
+                              exit(1)
+
+
+
+                      EOL
+
+                      python /harness/fetch_env_vars.py --base_path=/harness/demo-catalog/role-config --role=<+pipeline.variables.user_group> --output_file=/harness/env.out
+
+                      #source the output and map to step output    
+                      source /harness/env.out
+                    outputVariables:
+                      - name: aws_account
+                        type: String
+                        value: aws_account
+                      - name: vpc_id
+                        type: String
+                        value: vpc_id
+                      - name: subnet_1
+                        type: String
+                        value: subnet_1
+          cloneCodebase: false
+        tags: {}
+    - stage:
+        name: jenkins-integration
+        identifier: jenkinsintegration
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: |+
+                          echo "aws_account: <+pipeline.stages.fetchvars.spec.execution.steps.extractvars.output.outputVariables.aws_account>"
+
+                          echo "aws_vpc_id: <+pipeline.stages.fetchvars.spec.execution.steps.extractvars.output.outputVariables.vpc_id>"
+
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
+    - stage:
+        name: register-catalog
+        identifier: registercatalog
+        description: ""
+        type: IDP
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: GitClone
+                  name: GitCloneCatalogRepo
+                  identifier: GitCloneCatalogRepo
+                  spec:
+                    connectorRef: account.LephanHH
+                    repoName: demo-catalog
+                    cloneDirectory: /harness/demo-catalog-registration
+                    build:
+                      type: branch
+                      spec:
+                        branch: dev
+              - step:
+                  type: CreateCatalog
+                  name: CreateCatalogComponent
+                  identifier: CreateCatalog_1
+                  spec:
+                    fileName: eks-<+pipeline.stages.fetchvars.spec.execution.steps.extractvars.output.outputVariables.aws_account>-<+pipeline.variables.aws_eks_nane>.yaml
+                    filePath: /harness/demo-catalog-registration/idp
+                    fileContent: |-
+                      apiVersion: backstage.io/v1alpha1
+                      kind: Resource
+                      metadata:
+                        name: <+pipeline.variables.aws_eks_nane>
+                        description: <+pipeline.variables.aws_description>
+                        aws_account: <+pipeline.stages.fetchvars.spec.execution.steps.extractvars.output.outputVariables.aws_account>
+                        aws_vpc_id: <+pipeline.stages.fetchvars.spec.execution.steps.extractvars.output.outputVariables.vpc_id>
+
+                        annotations:
+                            backstage.io/techdocs-ref: dir:.
+
+                        links:
+                          - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-self-service-creation
+                            title: Upgrade
+                            type: admin-dashboard
+                          - url: https://admin.example-org.com
+                            title: Monitor
+                            type: admin-dashboard
+                          - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-self-service-creation
+                            title: Delete
+                            type: admin-dashboard
+
+                      spec:
+                        type: eks
+                        owner: <+pipeline.variables.user_group>
+                        lifecycle: experimental
+              - step:
+                  type: DirectPush
+                  name: DirectPushCatalogComponent
+                  identifier: DirectPush_1
+                  spec:
+                    connectorType: Github
+                    connectorRef: account.LephanHH
+                    organization: LePhanHN
+                    repository: demo-catalog
+                    codeDirectory: /harness/demo-catalog-registration
+                    branch: dev
+              - step:
+                  type: RegisterCatalog
+                  name: RegisterCatalog_1
+                  identifier: RegisterCatalog_1
+                  spec:
+                    connectorType: Github
+                    connectorRef: account.LephanHH
+                    organization: LePhanHN
+                    repository: demo-catalog
+                    filePath: /idp/eks-<+pipeline.stages.fetchvars.spec.execution.steps.extractvars.output.outputVariables.aws_account>-<+pipeline.variables.aws_eks_nane>.yaml
+                    branch: dev
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: account.accountlevelcluster
+              namespace: test
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+        tags: {}
+  variables:
+    - name: user_group
+      type: String
+      description: ""
+      required: false
+      value: <+input>
+    - name: aws_eks_nane
+      type: String
+      description: ""
+      required: false
+      value: <+input>
+    - name: aws_description
+      type: String
+      description: ""
+      required: false
+      value: <+input>
+  identifier: create-eks-idp-demo
+  name: create-eks-id-registration
+  description: Using roles to map to teams
