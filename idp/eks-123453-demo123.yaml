@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
   name: demo123
-  description: null
+  description: test env
   aws_account: 123453
   aws_vpc_id: 103
 
