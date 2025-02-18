@@ -1,4 +1,4 @@
-AD-role3:
+adgroup3:
   aws_account: 123453
   vpc_id: 103
   subnet_1: 1010103
