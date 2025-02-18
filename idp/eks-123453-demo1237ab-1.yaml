@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: demo1237ab-1
+  description: test env
+  aws_account: 123453
+  aws_vpc_id: 103
+
+  annotations:
+      backstage.io/techdocs-ref: dir:.
+
+  links:
+    - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-self-service-creation
+      title: Upgrade
+      type: admin-dashboard
+    - url: https://admin.example-org.com
+      title: Monitor
+      type: admin-dashboard
+    - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-self-service-creation
+      title: Delete
+      type: admin-dashboard
+
+spec:
+  type: eks
+  owner: group:default/adgroup3
+  lifecycle: experimental
