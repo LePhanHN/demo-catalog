@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: eks-creation-worfklow
   title: eks-creation-worfklow
-  description:eks-creation-worfklow
+  description: eks-creation-worfklow
 spec:
   tag:
     self-service
@@ -43,7 +43,7 @@ spec:
         url: ${{ steps.trigger.output.PipelineUrl }}
       - title: EKS Component
         url: ${{ steps.trigger.output['pipeline.stages.registercatalog.spec.execution.steps.RegisterCatalog_1.output.outputVariables.catalogInfoUrl'] }}
-        
+
 
 
         
