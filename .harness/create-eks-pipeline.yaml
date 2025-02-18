@@ -235,6 +235,6 @@ pipeline:
       description: ""
       required: false
       value: <+input>
-  identifier: create-eks-pipeline
-  name: Createeksidppipeline
+  identifier: createekspipeline
+  name: Create-eks-idp-pipeline
   description: Using repo for the mapping provides PR , separating different files reduces accidental changes.
