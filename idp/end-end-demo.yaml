@@ -43,7 +43,7 @@ spec:
         url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/ci/orgs/default/projects/DirectTVDemo/pipelines/createeks_Clone2/pipeline-studio?storeType=INLINE
         inputset:
           aws_eks_nane: ${{ parameters.aws_eks_nane }}
-          description: ${{ parameters.description }}
+          aws_description: ${{ parameters.description }}
           user_group: ${{ parameters.team }}
         apikey: ${{ parameters.token }}
         showOutputVariables: true
