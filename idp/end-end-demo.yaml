@@ -20,6 +20,16 @@ spec:
           type: string
           ui:widget: password
           ui:field: HarnessAuthToken      
+        aws_eks_nane:
+          title: aws_eks_nane
+          type: string
+          description: aws_eks_nane    
+          maxLength: 16
+          pattern: "^([a-zA-Z][a-zA-Z0-9]*)(-[a-zA-Z0-9]+)*$"          
+        description:
+          title: description of eks
+          type: string
+          description: description             
         team:
           title: Team
           type: string
@@ -34,7 +44,7 @@ spec:
         inputset:
           aws_eks_nane: ${{ parameters.aws_eks_nane }}
           description: ${{ parameters.description }}
-          team: ${{ parameters.team }}
+          user_group: ${{ parameters.team }}
         apikey: ${{ parameters.token }}
         showOutputVariables: true
   output:
