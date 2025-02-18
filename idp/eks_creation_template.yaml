@@ -103,7 +103,7 @@ spec:
       name: Create-eks-cluster
       action: trigger:harness-custom-pipeline
       input:
-        url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp-admin/orgs/default/projects/DirectTVDemo/pipelines/createeks/pipeline-studio?storeType=INLINE
+        url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/ci/orgs/default/projects/DirectTVDemo/pipelines/createekspipeline/pipeline-studio/?branch=dev&connectorRef=account.LephanHH&storeType=REMOTE&repoName=demo-catalog
         inputset:
           aws_account: ${{ parameters.aws_account }}
           aws_region: ${{ parameters.aws_region }}
