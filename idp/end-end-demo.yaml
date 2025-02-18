@@ -20,6 +20,14 @@ spec:
           type: string
           ui:widget: password
           ui:field: HarnessAuthToken      
+        aws_eks_nane:
+          title: aws_eks_nane
+          type: string
+          description: aws_eks_nane      
+        description:
+          title: description of eks
+          type: string
+          description: description             
         team:
           title: Team
           type: string
