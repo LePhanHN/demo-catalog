@@ -1,0 +1,4 @@
+AD-1:
+  aws_account: 123451
+  vpc_id: 101
+  subnet_1: 1010101
