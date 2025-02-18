@@ -34,7 +34,7 @@ spec:
         inputset:
           aws_eks_nane: ${{ parameters.aws_eks_nane }}
           description: ${{ parameters.description }}
-          team: ${{ parameters.team }}
+          user_group: ${{ parameters.team }}
         apikey: ${{ parameters.token }}
         showOutputVariables: true
   output:
