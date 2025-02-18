@@ -1,20 +1,13 @@
 apiVersion: backstage.io/v1alpha1
 kind: Resource
-
 metadata:
-
   name: test-cluster
   description: null
   aws_account: 123451
   aws_vpc_id: null
 
-  spec:
-    type: eks
-    owner: null
-
   annotations:
       backstage.io/techdocs-ref: dir:.
-
 
   links:
     - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-self-service-creation
@@ -28,6 +21,6 @@ metadata:
       type: admin-dashboard
 
 spec:
-  type: EKS
-  owner: null
+  type: eks
+  owner: AD-role1
   lifecycle: experimental
