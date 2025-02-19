@@ -1,4 +1,9 @@
 adgroup3:
-  aws_account: 123453
-  vpc_id: 103
-  subnet_1: 1010103
+  prod:
+    aws_account: p123453
+    vpc_id: p103
+    subnet_1: p1010103
+  nonprod:
+    aws_account: 123453
+    vpc_id: 103
+    subnet_1: 1010103
