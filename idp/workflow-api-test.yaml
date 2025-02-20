@@ -20,64 +20,17 @@ spec:
           type: string
           ui:widget: password
           ui:field: HarnessAuthToken      
-        user_identifier:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            title: "user_identifier"
-            description: "user_identifier"
-            placeholder: "Choose a group"
-            path: proxy/harness-api/ng/api/user/currentUser
-            params:
-              accountIdentifier: "<+account.identifier>"
-            request: 
-              method: GET
-              headers: 
-                Content-Type: application/json
-                x-api-key: {{ parameters.token }}
-            valueSelector: 'uuid'
-            arraySelector: 'data'   
         owner:
           title: Owner
           type: string
           description: Owner of the component
           ui:field: MyGroupsPicker
-    - title: "Page2"
-#      required:
-#        - harness_group
-      properties:
         envtype:
           title: envtype
           type: string
           enum:
           - nonprod
           - prod      
-        harness_group:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            title: "Harness Groups"
-            description: "Pick one of the Group"
-            placeholder: "Choose a group"
-            path: proxy/harness-api/ng/api/user-groups/filter
-            params:
-              pageIndex: "0"
-              pageSize: "50"
-              accountIdentifier: "<+account.identifier>"
-            request: 
-              method: POST
-              headers: 
-                Content-Type: application/json
-                x-api-key: {{ parameters.token }}
-              body: 
-                "searchTerm": "AD-"
-                "userIdentifierFilter":
-                  - "WQIgPE9bQO-Sf4xjLFvI0w"
-                "accountIdentifier": "<+account.identifier>"
-                #"orgIdentifier": "default"
-                "filterType": "INCLUDE_INHERITED_GROUPS"
-            valueSelector: 'name'
-            arraySelector: 'data.content'     
       dependencies:
         envtype:
           oneOf:
@@ -122,10 +75,4 @@ spec:
         url: ${{ steps.trigger.output.PipelineUrl }}
 
 
-          
-
-
-
-
-
-          
+        
