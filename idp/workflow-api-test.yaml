@@ -25,25 +25,38 @@ spec:
           type: string
           description: Owner of the component
           ui:field: MyGroupsPicker
-        technology:
-          title: technology
-          type: string
-          enum:
-          - java
-          - nonprod
-          - prod      
-      dependencies:
-        technology:
-          oneOf:
-            - properties:
-                technology:
+      environment:
+        title: Select Environment
+        type: string
+        enum:
+          - non-prod
+          - prod
+ 
+    dependencies:
+      environment:
+        oneOf:
+          - properties:
+                environment:
                   enum:
-                    - nonprod
-                java version:
-                  type: "string"
+                    - non-prod
+                environment-type:
+                  title: Select environment type
+                  type: string
                   enum:
-                    - dev1
-                    - dev2          
+                    - dev
+                    - test
+                    - int
+                    - perf
+          - properties:
+                environment:
+                  enum:
+                    - prod
+                environment-type:
+                  title: Select environment type
+                  type: string
+                  enum:
+                    - stage
+                    - prod          
   steps:
     - id: trigger
       name: Create-eks-cluster
