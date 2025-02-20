@@ -38,12 +38,12 @@ spec:
             - properties:
                 technology:
                   enum:
-                    - java
+                    - nonprod
                 java version:
                   type: "string"
                   enum:
-                    - java8
-                    - java11          
+                    - dev1
+                    - dev2          
   steps:
     - id: trigger
       name: Create-eks-cluster
