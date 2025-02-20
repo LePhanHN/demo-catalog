@@ -12,12 +12,6 @@ spec:
   type: resource
   parameters:
     - title: "Page1"
-#      required:
-#        - owner
-  parameters:
-    - title: "Page1"
-#      required:
-#        - owner
       properties:
         token:
           title: "Harness Token"
