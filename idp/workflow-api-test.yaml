@@ -46,6 +46,12 @@ spec:
 #      required:
 #        - harness_group
       properties:
+        envtype:
+          title: envtype
+          type: string
+          enum:
+          - nonprod
+          - prod      
         harness_group:
           type: string
           ui:field: SelectFieldFromApi
@@ -71,7 +77,28 @@ spec:
                 #"orgIdentifier": "default"
                 "filterType": "INCLUDE_INHERITED_GROUPS"
             valueSelector: 'name'
-            arraySelector: 'data.content'                
+            arraySelector: 'data.content'     
+      dependencies:
+        envtype:
+          oneOf:
+            - properties:
+                envtype:
+                  enum:
+                    - nonprod
+                target env:
+                  type: "string"
+                  enum:
+                    - dev1
+                    - dev2
+            - properties:
+                envtype:
+                  enum:
+                    - prod
+                target env:
+                  type: "string"
+                  enum:
+                    - prod1
+                    - prod2                
   steps:
     - id: trigger
       name: Create-eks-cluster
@@ -93,8 +120,8 @@ spec:
     links:
       - title: Pipeline Details
         url: ${{ steps.trigger.output.PipelineUrl }}
-          
-          
+
+
           
 
 
