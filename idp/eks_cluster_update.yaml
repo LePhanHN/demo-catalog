@@ -16,13 +16,6 @@ spec:
         - eks_cluster_name
         - action
       properties:
-  parameters:
-    - title: Fill in the repo details
-      required:
-        - aws_account
-        - eks_cluster_name
-        - action
-      properties:
         aws_account:
           title: aws account
           type: string
