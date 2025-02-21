@@ -10,13 +10,13 @@ metadata:
       backstage.io/techdocs-ref: dir:.
 
   links:
-    - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-update-delete-workflow?formData=%7B%22aws_account%2Ctest-cluster%2Caction%22%3A%20%22%22%7D
+    - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-update-delete-workflow?formData=%7B%22aws_account%20test-cluster%20action%22%3A%20%22%22%7D
       title: Upgrade
       type: admin-dashboard
     - url: https://admin.example-org.com
       title: Monitor
       type: admin-dashboard
-    - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-update-delete-workflow?formData=%7B%22aws_account%2Ctest-cluster%2Caction%22%3A%20%22%22%7D
+    - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-update-delete-workflow?formData=%7B%22aws_account%20test-cluster%20action%22%3A%20%22%22%7D
       title: Delete
       type: admin-dashboard
 
