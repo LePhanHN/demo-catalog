@@ -16,6 +16,13 @@ spec:
         - eks_cluster_name
         - action
       properties:
+  parameters:
+    - title: Fill in the repo details
+      required:
+        - aws_account
+        - eks_cluster_name
+        - action
+      properties:
         aws_account:
           title: aws account
           type: string
@@ -27,9 +34,22 @@ spec:
         action:
           title: action
           type: string
-          - enum
-            update
-            delete
+          enum:
+            - update
+            - delete
+        confirm:
+          title: Confirm with eks cluster name
+          type: string      
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: MyGroupsPicker          
+        token:
+          title: Harness Token
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken   
         token:
           title: Harness Token
           type: string
