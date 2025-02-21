@@ -2,8 +2,8 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: Workflows-Quickstart
-  title: Create a New GitHub Repository
+  name: eks-update-delete-workflow
+  title: Update / Delete EKS Cluster
   description: Creates a new GitHub Repository 
 spec:
   owner: service.owner
