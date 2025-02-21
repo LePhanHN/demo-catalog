@@ -3,12 +3,20 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: demo-catalog-svc
+  
   tags:
     - java
     - fedramp
   annotations:
     backstage.io/source-location: url:https://github.com/LePhanHN/demo-catalog-svc
     github.com/project-slug: LePhanHN/demo-catalog-svc
+   
+  links:
+   - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/workflows-quickstart?formData=formData=%7B%22github_org_name%22%3A%22directtv%22%2C%22github_repo_name%22%3A%22myrepo%22%2C%22github_username%22%3A%22lphan%22%2C%22aws_account%22%3A%22123%22%7D
+     title: Link with Cloud Icon
+     icon: cloud
+     payload: formData={"github_org_name":"directtv", "github_repo_name":"myrepo", "github_username":"lphan", "aws_account":"123"} back to encoding
+   
 spec:
   dependsOn:
     - resource:default/demo-catalog-svc-env-dev
