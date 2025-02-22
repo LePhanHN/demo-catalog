@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: Workflow-end-end
   title: workflow-api-test
-  description: workflow-api-test
+  description: Workflow-end-end
 spec:
   tag:
     self-service
