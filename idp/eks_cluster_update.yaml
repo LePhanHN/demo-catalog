@@ -4,7 +4,7 @@ kind: Template
 metadata:
   name: eks-update-delete-workflow
   title: Update / Delete EKS Cluster
-  description: Creates a new GitHub Repository 
+  description: Update / Delete EKS Cluster
 spec:
   owner: service.owner
   type: service
