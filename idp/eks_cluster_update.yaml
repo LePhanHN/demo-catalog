@@ -33,7 +33,7 @@ spec:
         team:
           type: string
           ui:widget: password
-          ui:field: secret  
+          ui:field: Secret  
         token:
           title: Harness Token
           type: string
