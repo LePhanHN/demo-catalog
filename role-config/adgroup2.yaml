@@ -1,9 +1,33 @@
-adgroup2:
+adgroup1:
   prod:
-    aws_account: p123452
-    vpc_id: p102
-    subnet_1: p1010102
+    aws_account: p1234512
+    vpc_id: p101
+    subnet_1: p1010101
   nonprod:
-    aws_account: 123452
-    vpc_id: 102
-    subnet_1: 1010102
+    aws_account: 1234512
+    vpc_id: 101
+    subnet_1: 1010101
+  test:
+    aws_account: t1234512
+    vpc_id: t101
+    subnet_1: t1010101    
+  int:
+    aws_account: int1234512
+    vpc_id: int101
+    subnet_1: int1010101      
+  perf:
+    aws_account: p1234512
+    vpc_id: p101
+    subnet_1: p1010101     
+  stage:
+    aws_account: stg1234512
+    vpc_id: stg101
+    subnet_1: stg1010101     
+  dev:
+    aws_account: dev1234512
+    vpc_id: dev101
+    subnet_1: dev1010101      
+  qa:
+    aws_account: qa1234512
+    vpc_id: qa101
+    subnet_1: qa1010101          
