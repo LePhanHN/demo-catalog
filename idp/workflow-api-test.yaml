@@ -23,15 +23,15 @@ spec:
           type: string
           description: Owner of the component
           ui:field: MyGroupsPicker
+        aws_eks_nane:
+          title: eks cluster name
+          type: string             
         environment:
           title: Select Environment
           type: string
           enum:
             - non-prod
-            - prod
-        aws_eks_nane:
-          title: eks cluster name
-          type: string        
+            - prod    
       dependencies:
         environment:
           oneOf:
