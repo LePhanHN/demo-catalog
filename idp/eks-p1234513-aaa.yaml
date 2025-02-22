@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aaa
+  description: test
+  aws_account: p1234513
+  aws_vpc_id: p101
+
+  annotations:
+      backstage.io/techdocs-ref: dir:.
+
+  links:
+    - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-update-delete-workflow?formData=%7B%22aws_account%22%3A%20%22p1234513%22%2C%20%22eks_cluster_name%22%3A%20%22aaa%22%2C%20%22action%22%3A%20%22update%22%7D
+      title: Upgrade
+      type: admin-dashboard
+    - url: https://admin.example-org.com
+      title: Monitor
+      type: admin-dashboard
+    - url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-update-delete-workflow?formData=%7B%22aws_account%22%3A%20%22p1234513%22%2C%20%22eks_cluster_name%22%3A%20%22aaa%22%2C%20%22action%22%3A%20%22delete%22%7D
+      title: Delete
+      type: admin-dashboard
+
+spec:
+  type: eks
+  owner: group:default/adgroup3
+  lifecycle: experimental
