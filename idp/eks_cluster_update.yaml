@@ -32,6 +32,8 @@ spec:
             - delete
         team:
           type: string
+          ui:widget: password
+          ui:field: secret  
         token:
           title: Harness Token
           type: string
@@ -47,7 +49,7 @@ spec:
           action: ${{ parameters.action  }}
           eks_cluster_name: ${{ parameters.eks_cluster_name }}
           aws_account: ${{ parameters.aws_account }}
-          team: ${{ parameters.team}}
+          team: ${{ secrets.team}}
         apikey: ${{ parameters.token }}
         showOutputVariables: true
           
