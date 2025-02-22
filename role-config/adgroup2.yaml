@@ -1,4 +1,4 @@
-adgroup1:
+adgroup2:
   prod:
     aws_account: p1234512
     vpc_id: p101
