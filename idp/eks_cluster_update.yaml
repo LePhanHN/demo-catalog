@@ -32,6 +32,7 @@ spec:
             - delete
         team:
           type: string
+          ui:widget: password
           ui:field: Secret
         token:
           title: Harness Token
