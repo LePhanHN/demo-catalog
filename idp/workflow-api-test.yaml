@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: Workflow-end-end
-  title: workflow-api-test
+  title: Workflow-end-end
   description: Workflow-end-end
 spec:
   tag:
