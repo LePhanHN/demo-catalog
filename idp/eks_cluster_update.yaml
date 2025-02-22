@@ -32,8 +32,6 @@ spec:
             - delete
         team:
           type: string
-          ui:widget: password
-          ui:field: Secret
         token:
           title: Harness Token
           type: string
@@ -47,9 +45,9 @@ spec:
         url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/all/orgs/default/projects/DirectTVDemo/pipelines/demo_eks_update_delete_cluster/pipeline-studio?storeType=INLINE
         inputset:      
           action: ${{ parameters.action  }}
-          eks_cluster_name: ${{ $pameters.eks_cluster_name }}
-          aws_account: ${{ pameters.aws_account }}
-          team:  ${{  pameters.team  }}          
+          eks_cluster_name: ${{ $parameters.eks_cluster_name }}
+          aws_account: ${{ parameters.aws_account }}
+          team: $${{ parameters.team}}
         apikey: ${{ parameters.token }}
         showOutputVariables: true
           
