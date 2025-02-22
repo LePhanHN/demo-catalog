@@ -47,7 +47,7 @@ spec:
           action: ${{ parameters.action  }}
           eks_cluster_name: ${{ parameters.eks_cluster_name }}
           aws_account: ${{ parameters.aws_account }}
-          team: $${{ parameters.team}}
+          team: ${{ parameters.team}}
         apikey: ${{ parameters.token }}
         showOutputVariables: true
           
