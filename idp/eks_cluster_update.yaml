@@ -30,14 +30,10 @@ spec:
           enum:
             - update
             - delete
-        confirm:
-          title: Confirm with eks cluster name
-          type: string      
-        owner:
-          title: Owner
+        team:
+          title: team
           type: string
-          description: Owner of the component
-          ui:field: MyGroupsPicker          
+          ui:widget: password         
         token:
           title: Harness Token
           type: string
@@ -50,6 +46,7 @@ spec:
       input:
         url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/ci/orgs/default/projects/DirectTVDemo/pipelines/GitHub_Repository_Onboarding_Clone_Clone/pipeline-studio?storeType=INLINE
         inputset:
+        
         apikey: ${{ parameters.token }}
         showOutputVariables: true
 
