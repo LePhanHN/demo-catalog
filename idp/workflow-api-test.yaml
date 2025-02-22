@@ -62,7 +62,7 @@ spec:
       name: Create-eks-cluster
       action: trigger:harness-custom-pipeline
       input:
-        url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp-admin/orgs/default/projects/DirectTVDemo/pipelines/createeks/pipeline-studio?storeType=INLINE
+        url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/ci/orgs/default/projects/DirectTVDemo/pipelines/createeks_Clone2/pipeline-studio?storeType=INLINE
         inputset:
           aws_eks_nane: ${{ parameters.aws_eks_nane }}
           aws_env_type: ${{ parameters.aws_env_type }}
