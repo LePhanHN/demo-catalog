@@ -18,7 +18,7 @@ spec:
           type: string
           ui:widget: password
           ui:field: HarnessAuthToken      
-        owner:
+        team:
           title: Team
           type: string
           description: Owner of the component
@@ -65,7 +65,7 @@ spec:
         url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/ci/orgs/default/projects/DirectTVDemo/pipelines/createeks_Clone2/pipeline-studio?storeType=INLINE
         inputset:
           aws_eks_nane: ${{ parameters.aws_eks_nane }}
-          env: ${{ parameters.aws_env_type }}
+          env: ${{ parameters.environment-type }}
           user_group: ${{ parameters.team }}
           eksworkflow_url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-update-delete-workflow
         apikey: ${{ parameters.token }}
