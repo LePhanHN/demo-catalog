@@ -23,7 +23,7 @@ spec:
           type: string
           description: Owner of the component
           ui:field: MyGroupsPicker
-        aws_eks_nane:
+        cluster_name:
           title: eks cluster name
           type: string              
           description: cluster name
@@ -65,7 +65,7 @@ spec:
       input:
         url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/ci/orgs/default/projects/DirectTVDemo/pipelines/createeks_Clone2/pipeline-studio?storeType=INLINE
         inputset:
-          aws_eks_name: ${{  parameters.aws_eks_nane }}
+          aws_eks_name: ${{  parameters.cluster_name }}
           env: ${{ parameters.environment_type }}
           user_group: ${{ parameters.team }}
           eksworkflow_url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp/create/templates/default/eks-update-delete-workflow
