@@ -33,7 +33,8 @@ spec:
         team:
           title: team
           type: string
-          ui:widget: password         
+          ui:widget: password 
+          ui:field: Secret
         token:
           title: Harness Token
           type: string
@@ -46,7 +47,7 @@ spec:
       input:
         url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/all/orgs/default/projects/DirectTVDemo/pipelines/demo_eks_update_delete_cluster/pipeline-studio?storeType=INLINE
         inputset:      
-          team: ${{ parameters.team }}
+          team: ${{ secrets.team }}
           action: ${{ parameters.action}}
           eks_cluster_name: ${{ pameters.eks_cluster_name }}
           aws_account: $${{ pameters.aws_account }}
