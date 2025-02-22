@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
   name: test-cluster
-  description: a dev cluster
+  description: test
   aws_account: p123453
   aws_vpc_id: p103
 
