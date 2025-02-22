@@ -29,6 +29,9 @@ spec:
           enum:
             - non-prod
             - prod
+        aws_eks_nane:
+          title: eks cluster name
+          type: string        
       dependencies:
         environment:
           oneOf:
@@ -61,13 +64,8 @@ spec:
       input:
         url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/idp-admin/orgs/default/projects/DirectTVDemo/pipelines/createeks/pipeline-studio?storeType=INLINE
         inputset:
-          aws_account: ${{ parameters.aws_account }}
-          aws_region: ${{ parameters.aws_region }}
-          aws_vpc: ${{ parameters.aws_vpc }}
           aws_eks_nane: ${{ parameters.aws_eks_nane }}
           aws_env_type: ${{ parameters.aws_env_type }}
-          aws_description: ${{ parameters.aws_description }}
-          aws_node_type: ${{ parameters.aws_node_type }}
           owner: ${{ parameters.owner }}
         apikey: ${{ parameters.token }}
         showOutputVariables: true
