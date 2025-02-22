@@ -7,3 +7,27 @@ adgroup1:
     aws_account: 123451
     vpc_id: 101
     subnet_1: 1010101
+  test:
+    aws_account: t123451
+    vpc_id: t101
+    subnet_1: t1010101    
+  int:
+    aws_account: int123451
+    vpc_id: int101
+    subnet_1: int1010101      
+  perf:
+    aws_account: p123451
+    vpc_id: p101
+    subnet_1: p1010101     
+  stage:
+    aws_account: stg123451
+    vpc_id: stg101
+    subnet_1: stg1010101     
+  dev:
+    aws_account: dev123451
+    vpc_id: dev101
+    subnet_1: dev1010101      
+  qa:
+    aws_account: qa123451
+    vpc_id: qa101
+    subnet_1: qa1010101          
