@@ -45,10 +45,11 @@ spec:
       action: trigger:harness-custom-pipeline
       input:
         url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/ci/orgs/default/projects/DirectTVDemo/pipelines/GitHub_Repository_Onboarding_Clone_Clone/pipeline-studio?storeType=INLINE
-        inputset:
-        
+        inputset:      
+          team: ${{ parameters.team }}
+          action: ${{ parameters.action}}
+          eks_cluster_name: ${{ pameters.eks_cluster_name }}
+          aws_account: $${{ pameters.aws_account }}
         apikey: ${{ parameters.token }}
         showOutputVariables: true
-
-
           
