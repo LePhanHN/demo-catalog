@@ -23,7 +23,7 @@ spec:
           type: string
           description: Owner of the component
           ui:field: MyGroupsPicker
-        env:
+        environment:
           title: Select Environment
           type: string
           enum:
