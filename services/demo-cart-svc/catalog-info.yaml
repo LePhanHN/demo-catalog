@@ -11,7 +11,7 @@ metadata:
     github.com/project-slug: LePhanHN/demo-cart-svc
     backstage.io/techdocs-ref: url:https://github.com/LePhanHN/demo-cart-svc
     #'jenkins.io/github-folder': Harness/Testing
-    'jenkins.io/job-full-name': Harness/Testing/harness-testing
+    'jenkins.io/job-full-name': Harness/Testing
 spec:
   type: service
   lifecycle: production
