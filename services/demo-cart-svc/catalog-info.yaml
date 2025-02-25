@@ -10,7 +10,7 @@ metadata:
     backstage.io/source-location: url:https://github.com/LePhanHN/demo-cart-svc
     github.com/project-slug: LePhanHN/demo-cart-svc
     backstage.io/techdocs-ref: url:https://github.com/LePhanHN/demo-cart-svc
-    jenkins.io/github-folder: DCP/ClusterEnvironmentManagement/client-cluster-management/423586352879_aws-31971-dcp-ec2-Jumpbox-us-west-2-non-prod
+    jenkins.io/github-folder: DCP/ClusterEnvironmentManagement/client-cluster-management
 spec:
   type: service
   lifecycle: production
