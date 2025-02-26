@@ -27,39 +27,7 @@ parameters:
             action: "listAccounts"          
           valueSelector: Id
           allowArbitraryValues: false    
-      aws_region:
-        type: string
-        ui:field: SelectFieldFromApi
-        ui:options:
-          title: Regions
-          description: Regions
-          placeholder: Choose a Region
-          path: proxy/demo-api
-          params:
-            action: "listRegions"          
-          valueSelector: region
-          allowArbitraryValues: false
-      vpc:
-        type: string
-        ui:field: SelectFieldFromApi
-        ui:options:
-          title: VPC
-          description: VPC
-          placeholder: Select VPC
-          path: proxy/demo-api
-          params:
-            action: "listVPCs"    
-            account_id: "abc"
-            region: "us-west-2"
-          valueSelector: VpcId
-          allowArbitraryValues: false          
-  - title: reference
-    required:
-      - aws_account
-    properties:
-      aws_account:
-        type: string
-        value: {{ parameters.aws_account}}
+
 steps:
   - id: trigger
     name: Create-eks-cluster
