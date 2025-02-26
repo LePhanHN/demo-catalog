@@ -15,7 +15,7 @@ parameters:
     required:
       - aws_account
     properties:
-      aws_accounts:
+      aws_account:
         type: string
         ui:field: SelectFieldFromApi
         ui:options:
