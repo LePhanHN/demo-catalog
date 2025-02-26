@@ -1,20 +1,22 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: EKS-self-service-creation
-  title: Create EKS Cluster
-  description: Create EKS Cluster
+  name: api-demo
+  title: api-demo
+  description: api-demo
 spec:
-  tag:
-    self-service
-    eks
-  owner: service.owner
-  type: resource
+  owner: DCP
+  type: service
   parameters:
-    - title: Account
+    - title: Fill in the repo details
       required:
-        - aws_account
+      - aws_account
       properties:
+        token:
+          title: Harness Token
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken
         aws_account:
           type: string
           ui:field: SelectFieldFromApi
@@ -26,54 +28,35 @@ spec:
             params:
               action: "listAccounts"          
             valueSelector: Id
-            allowArbitraryValues: false    
-        aws_region:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            title: Regions
-            description: Regions
-            placeholder: Choose a Region
-            path: proxy/demo-api
-            params:
-              action: "listRegions"          
-            valueSelector: region
-            allowArbitraryValues: false
-        vpc:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            title: VPC
-            description: VPC
-            placeholder: Select VPC
-            path: proxy/demo-api
-            params:
-              action: "listVPCs"    
-              account_id: "abc"
-              region: "us-west-2"
-            valueSelector: VpcId
-            allowArbitraryValues: false          
-    - title: reference
-      required:
-        - aws_account
-      properties:
-        aws_account:
-          type: string
-          value: {{ parameters.aws_account}}
-steps:
-  - id: trigger
-    name: Create-eks-cluster
-    action: trigger:harness-custom-pipeline
-    input:
-      url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/ci/orgs/default/projects/DirectTVDemo/pipelines/createekspipeline/pipeline-studio/?branch=dev&connectorRef=account.LephanHH&storeType=REMOTE&repoName=demo-catalog
-      inputset:
-        aws_account: ${{ parameters.aws_account }}
-        aws_region: ${{ parameters.aws_region }}
-        aws_vpc: ${{ parameters.aws_vpc }}
-      apikey: ${{ parameters.token }}
-      showOutputVariables: true
-output:
-  links:
-    - title: Pipeline Details
-      url: ${{ steps.trigger.output.PipelineUrl }}
-      
+            allowArbitraryValues: false             
+                  
+  steps:
+    - id: trigger
+      name: Onboarding a New GitHub Repository
+      action: trigger:harness-custom-pipeline
+      input:
+        #url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/all/orgs/default/projects/DirectTVDemo/pipelines/GitHub_Repository_Onboarding/pipeline-studio?storeType=INLINE
+        url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/ci/orgs/default/projects/DirectTVDemo/pipelines/GitHub_Repository_Onboarding_Clone_Clone/pipeline-studio?storeType=INLINE
+        inputset:
+          github_org: ${{ parameters.github_org_name }}
+          github_repo: ${{ parameters.github_repo_name }}
+          github_username: ${{parameters.github_username}}
+        apikey: ${{ parameters.token }}
+        showOutputVariables: true
+  output:
+    links:
+      - title: Pipeline Details
+        url: ${{ steps.trigger.output.PipelineUrl }}
+    text:
+      - title: Outputs
+        content: |
+          return: ${{steps.trigger.output.RETURN_VAL}},github_org_name: ${{ parameters.github_org_name}},github_repo_name: ${{ parameters.github_repo_name}}
+          
+          
+          
+
+
+
+
+
+          
