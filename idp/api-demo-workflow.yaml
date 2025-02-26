@@ -55,6 +55,13 @@ spec:
               region: "us-west-2"
             valueSelector: VpcId
             allowArbitraryValues: false          
+    - title: reference
+      required:
+        - aws_account
+      properties:
+        aws_account:
+          type: string
+          value: {{ parameters.aws_account}}            
 
   steps:
     - id: trigger
