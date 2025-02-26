@@ -76,3 +76,4 @@ output:
   links:
     - title: Pipeline Details
       url: ${{ steps.trigger.output.PipelineUrl }}
+      
