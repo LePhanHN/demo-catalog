@@ -12,21 +12,7 @@ spec:
   type: resource
 parameters:
   - title: Account
-    required:
-      - aws_account
     properties:
-      aws_account:
-        type: string
-        ui:field: SelectFieldFromApi
-        ui:options:
-          title: AWS Account
-          description: AWS Account selected
-          placeholder: Choose an AWS Account
-          path: proxy/demo-api
-          params:
-            action: "listAccounts"          
-          valueSelector: Id
-          allowArbitraryValues: false    
 
 steps:
   - id: trigger
