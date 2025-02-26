@@ -1,9 +1,9 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: EKS-self-service-creation
-  title: Create EKS Cluster
-  description: Create EKS Cluster
+  name: API-demo
+  title: API-demo
+  description: API-demo
 spec:
   tag:
     self-service
