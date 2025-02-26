@@ -68,12 +68,9 @@ spec:
       name: Onboarding a New GitHub Repository
       action: trigger:harness-custom-pipeline
       input:
-        #url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/all/orgs/default/projects/DirectTVDemo/pipelines/GitHub_Repository_Onboarding/pipeline-studio?storeType=INLINE
         url: https://app.harness.io/ng/account/278oQOylSUWVALR6dOgnhg/module/ci/orgs/default/projects/DirectTVDemo/pipelines/GitHub_Repository_Onboarding_Clone_Clone/pipeline-studio?storeType=INLINE
         inputset:
-          github_org: ${{ parameters.github_org_name }}
-          github_repo: ${{ parameters.github_repo_name }}
-          github_username: ${{parameters.github_username}}
+          aws_account: ${{ parameters.aws_account }}
         apikey: ${{ parameters.token }}
         showOutputVariables: true
   output:
