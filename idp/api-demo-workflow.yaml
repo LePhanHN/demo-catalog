@@ -28,47 +28,7 @@ spec:
             params:
               action: "listAccounts"          
             valueSelector: Id
-            allowArbitraryValues: false             
-        aws_account:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            title: AWS Account
-            description: AWS Account selected
-            placeholder: Choose an AWS Account
-            path: proxy/demo-api
-            params:
-              action: "listAccounts"          
-            valueSelector: Id
-            allowArbitraryValues: false    
-        aws_region:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            title: Regions
-            description: Regions
-            placeholder: Choose a Region
-            path: proxy/demo-api
-            params:
-              action: "listRegions"          
-            valueSelector: region
-            allowArbitraryValues: false
-        vpc:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            title: VPC
-            description: VPC
-            placeholder: Select VPC
-            path: proxy/demo-api
-            params:
-              action: "listVPCs"    
-              account_id: "abc"
-              region: "us-west-2"
-            valueSelector: VpcId
-            allowArbitraryValues: false          
-
-
+            allowArbitraryValues: false         
 
   steps:
     - id: trigger
