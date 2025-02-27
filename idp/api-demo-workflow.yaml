@@ -8,61 +8,76 @@ spec:
   owner: DCP
   type: service
   parameters:
-    - title: Fill in the repo details
-      required:
-      - aws_account
-      properties:
-        token:
-          title: Harness Token
-          type: string
-          ui:widget: password
-          ui:field: HarnessAuthToken
-        aws_account:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            title: AWS Account
-            description: Pick one of the AWS Account
-            placeholder: "Choose an AWS Account"
-            path: proxy/demo-api
-            params:
-              action: "listAccounts"
-            valueSelector: "Id"
-            allowArbitraryValues: true      
-        aws_region:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            title: Regions
-            description: Regions
-            placeholder: Choose a Region
-            path: proxy/demo-api
-            params:
-              action: "listRegions"          
-            valueSelector: region
-            allowArbitraryValues: false
-        vpc:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            title: VPC
-            description: VPC
-            placeholder: Select VPC
-            path: proxy/demo-api
-            params:
-              action: "listVPCs"    
-              account_id: "abc"
-              region: "us-west-2"
-            valueSelector: VpcId
-            allowArbitraryValues: false          
-    - title: reference
-      required:
-        - aws_account
-      properties:
-        aws_account:
-          type: string
-          value: {{ parameters.aws_account}}            
-
+parameters:
+  - title: Fill in the repo details
+    properties:
+      token:
+        title: Harness Token
+        type: string
+        ui:widget: password
+        ui:field: HarnessAuthToken
+      aws_account:
+        type: string
+        ui:field: SelectFieldFromApi
+        ui:options:
+          title: AWS Account
+          description: Pick one of the AWS Account
+          placeholder: Choose an AWS Account
+          path: proxy/demo-api
+          params:
+            action: listAccounts
+          valueSelector: Id
+          allowArbitraryValues: true
+      aws_region:
+        type: string
+        ui:field: SelectFieldFromApi
+        ui:options:
+          title: Regions
+          description: Regions
+          placeholder: Choose a Region
+          path: proxy/demo-api
+          params:
+            action: listRegions
+          valueSelector: region
+          allowArbitraryValues: false
+      vpc:
+        type: string
+        ui:field: SelectFieldFromApi
+        ui:options:
+          title: VPC
+          description: VPC
+          placeholder: Select VPC
+          path: proxy/demo-api
+          params:
+            action: listVPCs
+            account_id: abc
+            region: us-west-2
+          valueSelector: VpcId
+          allowArbitraryValues: false
+      team:
+        title: Team
+        type: string
+        description: Team
+        ui:field: MyGroupsPicker    
+      entity:
+        title: Entity
+        type: string          
+     
+  - title: reference
+    properties:
+      env:
+        type: string
+        ui:field: SelectFieldFromApi
+        ui:options:
+          title: env
+          description: env
+          placeholder: Select env
+          path: proxy/harness-api/278oQOylSUWVALR6dOgnhg/idp/api/catalog/entities
+          params:
+            filter: kind=resource,spec.owner={{ parameters.team }}
+          valueSelector: metadata.name
+          allowArbitraryValues: false 
+  
   steps:
     - id: trigger
       name: Onboarding a New GitHub Repository
