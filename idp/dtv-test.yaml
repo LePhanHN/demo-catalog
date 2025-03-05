@@ -43,6 +43,20 @@ spec:
               exampl_title: title
               exampl_url: url   
               exampl_type: type   
+        property_title:
+          title: title of the link
+          readonly: true
+          type: string
+          ui:field: ContextViewer
+          ui:options:
+            getContextData: {{formContext.exampl_title}}  
+        property_type:
+          title: type of the link
+          readonly: true
+          type: string
+          ui:field: ContextViewer
+          ui:options:
+            getContextData: {{formContext.exampl_type}}                
         formContext:
           title: Live Form Context
           description: DEBUG Context
