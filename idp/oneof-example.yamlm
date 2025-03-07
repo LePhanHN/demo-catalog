@@ -1,0 +1,106 @@
+parameters:
+  - title: EKS Information
+    required:
+      - team
+    properties:
+      token:
+        title: Harness Token
+        type: string
+        ui:widget: password
+        ui:field: HarnessAuthToken
+      team:
+        title: Team
+        type: string
+        description: Team
+        ui:field: MyGroupsPicker
+      environment:
+        title: Select Environment
+        type: string
+        enum:
+          - non-prod
+          - prod
+      eks_cluster_name:
+        title: EKS Cluster Name
+        type: string
+        description: eks_cluster_name
+        maxLength: 64
+        pattern: ^([a-zA-Z][a-zA-Z0-9]*)(-[a-zA-Z0-9]+)*$
+      volume_type:
+        title: EBS Volume Type
+        type: string
+        description: The volume type to be used
+        default: gp3
+        enum:
+          - gp3
+      node_type:
+        title: Node Instance Type
+        type: string
+        description: The worker node instance type to be created
+        default: t3a.xlarge
+        enum:
+          - t3a.xlarge
+          - t3a.2xlarge
+          - m6a.xlarge
+          - m6a.2xlarge
+          - c6a.xlarge
+          - c6a.2xlarge
+          - r5a.xlarge
+          - r5a.2xlarge
+      nodes_count:
+        title: Number of worker nodes
+        type: number
+        description: The Number of worker nodes to be created and attached to EKS Cluster
+        default: 2
+        enum:
+          - 2
+          - 3
+          - 4
+      multi-cluster:
+        title: Mutli Cluster
+        type: boolean
+      karpenter-install:
+        title: Karpenter Install
+        type: boolean
+    dependencies:
+      environment:
+        oneOf:
+          - properties:
+              environment:
+                enum:
+                  - non-prod
+              environment-type:
+                title: Select environment type
+                type: string
+                enum:
+                  - dev
+                  - test
+                  - int
+                  - perf
+          - properties:
+              environment:
+                enum:
+                  - prod
+              environment-type:
+                title: Select environment type
+                type: string
+                enum:
+                  - stage
+                  - prod
+steps:
+  - id: trigger
+    name: Create-eks-cluster
+    action: trigger:harness-custom-pipeline
+    input:
+      url: https://app.harness.io/ng/account/ow3wOLKoQASF8ih6yBsvAw/module/idp-admin/orgs/DCP/projects/DCPSandbox/pipelines/createekspipelinedemocustom/pipeline-studio/?storeType=REMOTE&connectorRef=account.dcpgithub&repoName=apm0014514-dcp-workflow-pipelines&branch=main-patch
+      inputset:
+        eks_cluster_name: ${{ parameters.eks_cluster_name }}
+        env: ${{ parameters.environment }}
+        team: ${{ parameters.team }}
+        eksworkflowupdate_url: https://app.harness.io/ng/account/ow3wOLKoQASF8ih6yBsvAw/module/idp/create/templates/default/eks-update-workflow
+        eksworkflowdelete_url: https://app.harness.io/ng/account/ow3wOLKoQASF8ih6yBsvAw/module/idp/create/templates/default/eks-delete-workflow
+      apikey: ${{ parameters.token }}
+      showOutputVariables: true
+output:
+  links:
+    - title: Pipeline Details
+      url: ${{ steps.trigger.output.PipelineUrl }}
