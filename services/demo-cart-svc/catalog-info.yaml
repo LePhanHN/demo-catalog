@@ -16,4 +16,6 @@ spec:
   type: service
   lifecycle: production
   owner: Harness_Account_All_Users
+  providesApis:
+    - petstore  
 
