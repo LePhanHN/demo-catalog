@@ -1,0 +1,15 @@
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: petstore-service
+  tags:
+  links:
+  annotations:
+
+spec:
+  type: service
+  lifecycle: staging
+  owner: joe
+  providesApis:
+    - petstore
