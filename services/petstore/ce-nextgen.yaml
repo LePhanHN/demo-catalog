@@ -9,4 +9,4 @@ spec:
   lifecycle: production
   owner: johndoe
   definition:
-    $text: https://github.com/OAI/OpenAPI-Specification/blob/main/schemas/v2.0/schema.json
+    $text: https://github.com/OAI/OpenAPI-Specification/blob/main/schemas/v3.1/schema.yaml
