@@ -16,6 +16,6 @@ metadata:
 spec:
   type: openapi
   lifecycle: dev
-  owner: Harness_Partners
+  owner: Harness_Account_All_Users
   definition:
     $text: https://github.com/LePhanHN/demo-catalog/blob/dev/services/petstore/petstore-openapi.yaml
