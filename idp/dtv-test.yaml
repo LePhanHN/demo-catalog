@@ -49,8 +49,8 @@ spec:
           ui:options:
             placeholder: title_test_2
             path: proxy/harness-idp-api/ow3wOLKoQASF8ih6yBsvAw/idp/api/catalog/entities/by-uid/{{parameters.uid}}
-            arraySelector: ./metadata            
-            valueSelector: name
+            #arraySelector: ./metadata            
+            valueSelector: metadata.name
         property_title:
           title: title of the link
           readonly: true
