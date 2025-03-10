@@ -43,6 +43,13 @@ spec:
               exampl_title: title
               exampl_url: url   
               exampl_type: type   
+        title_test_2:
+          type: string
+          ui:field: SelectFieldFromApi
+          ui:options:
+            placeholder: title_test_2
+            path: proxy/harness-idp-api/ow3wOLKoQASF8ih6yBsvAw/idp/api/catalog/entities/by-uid/{{parameters.uid}}
+            valueSelector: name
         property_title:
           title: title of the link
           readonly: true
