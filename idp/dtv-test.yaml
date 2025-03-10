@@ -49,7 +49,7 @@ spec:
           ui:options:
             placeholder: title_test_2
             path: proxy/harness-idp-api/ow3wOLKoQASF8ih6yBsvAw/idp/api/catalog/entities/by-uid/{{parameters.uid}}
-            arraySelector: .            
+            #arraySelector: .            
             valueSelector: ./medata.name
         property_title:
           title: title of the link
