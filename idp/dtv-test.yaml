@@ -32,16 +32,7 @@ spec:
            setContextData:
              component_name: metadata.name
              component_uid: metadata.uid 
-             component_uid: metadata.title
-    - title: next
-      properties:             
-        formContext:
-          title: Live Form Context
-          description: DEBUG Context
-          type: string
-          ui:field: ContextViewer
-          ui:options:
-            getContextData: {{formContext}}             
+             component_uid: metadata.title          
 
   steps:
     - id: trigger
