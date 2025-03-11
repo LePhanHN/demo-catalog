@@ -41,6 +41,8 @@ spec:
              component_uid: metadata.uid
              component_name: metadata.name
              component_title: metadata.title
+             test: title
+             abc: metadata
         formContext:
           title: Live Form Context
           description: DEBUG Context
