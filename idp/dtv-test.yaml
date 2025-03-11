@@ -35,13 +35,12 @@ spec:
          ui:options:
            placeholder: Select titles
            path: catalog/entities?filter=metadata.uid={{parameters.uid}}
-           arraySelector: metadata
-           valueSelector: title
+           valueSelector: metadata.name
            allowArbitraryValues: false
            setContextData:
-             component_uid: uid
-             component_name: name                
-             component_title: title              
+             component_uid: metadata.uid
+             component_name: metadata.name                
+             component_title: metadata.title              
         formContext:
           title: Live Form Context
           description: DEBUG Context
