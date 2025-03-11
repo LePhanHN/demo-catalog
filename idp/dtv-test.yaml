@@ -39,29 +39,22 @@ spec:
             path: proxy/harness-idp-api/ow3wOLKoQASF8ih6yBsvAw/idp/api/catalog/entities/by-uid/{{parameters.uid}}
             arraySelector: metadata.links
             valueSelector: title
-            setContextData:
-              exampl_title: title
-              exampl_url: url   
-              exampl_type: type
+            #setContextData:
+            #  exampl_title: title
+            #  exampl_url: url   
+            #  exampl_type: type
          uid:
            type: string
            ui:field: SelectFieldFromApi
            ui:options:
-             placeholder: Select titles
+             placeholder: SELECT-UID
              path: catalog/entities
              valueSelector: metadata.uid
              labelSelector: metadata.name
              allowArbitraryValues: false      
              setContextData:
                component_uid: metadata.uid
-               component_name: metadata.name
-           formContext:
-             title: Live Form Context
-             description: DEBUG Context
-             type: string
-             ui:field: ContextViewer
-             ui:options:
-              getContextData: {{formContext}}               
+               component_name: metadata.name           
         property_title:
           title: title of the link
           readonly: true
