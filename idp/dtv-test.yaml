@@ -36,7 +36,7 @@ spec:
            type: string
            ui:field: SelectFieldFromApi
            ui:options:
-             #placeholder: Select titles
+             placeholder: Select titles
              path: catalog/entities?filter=metadata.uid={{parameters.uid}}
              valueSelector: metadata.title      
              allowArbitraryValues: false
