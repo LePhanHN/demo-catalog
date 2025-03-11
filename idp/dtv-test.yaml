@@ -37,17 +37,11 @@ spec:
            path: catalog/entities?filter=metadata.uid={{parameters.uid}}
            valueSelector: metadata.name
            allowArbitraryValues: false
-           setContextData:
-             component_uid: metadata.uid
-             component_name: metadata.name                
-             component_title: metadata.title              
-        formContext:
-          title: Live Form Context
-          description: DEBUG Context
-          type: string
-          ui:field: ContextViewer
-          ui:options:
-            getContextData: {{formContext}}
+           #setContextData:
+             #component_uid: metadata.uid
+             #component_name: metadata.name                
+             #component_title: metadata.title              
+
     steps:
     - id: trigger
       name: Onboarding a New GitHub Repository
