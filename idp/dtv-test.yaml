@@ -36,12 +36,12 @@ spec:
            placeholder: Select titles
            path: catalog/entities?filter=metadata.uid={{parameters.uid}}
            valueSelector: metadata.name
+           valueSelector: metadata.title
            allowArbitraryValues: false
-           #setContextData:
-             #component_uid: metadata.uid
-             #component_name: metadata.name                
-             #component_title: metadata.title              
-
+           setContextData:
+            component_uid: metadata.uid
+            component_name: metadata.name
+            component_title: metadata.title                      
     steps:
     - id: trigger
       name: Onboarding a New GitHub Repository
