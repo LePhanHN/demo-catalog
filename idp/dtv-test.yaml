@@ -44,7 +44,9 @@ spec:
            setContextData:
              component_name1: metadata.name
              component_uid1: metadata.uid 
-             component_title1: metadata.title              
+             component_title1: metadata.title  
+    - title: Fill in the repo details 2
+      properties:             
         formContext:
           title: Live Form Context
           description: DEBUG Context
