@@ -45,6 +45,30 @@ spec:
              component_name1: metadata.name
              component_uid1: metadata.uid 
              component_title1: metadata.title  
+        detail:
+         type: string
+         ui:field: SelectFieldFromApi
+         ui:options:
+           placeholder: Select titles
+           path: catalog/entities?filter=metadata.uid={{parameters.uid}}
+           valueSelector: metadata.name      
+           allowArbitraryValues: false     
+           setContextData:
+             component_name1: metadata.name
+             component_uid1: metadata.uid 
+             component_title1: metadata.title     
+        detail2:
+         type: string
+         ui:field: SelectFieldFromApi
+         ui:options:
+           placeholder: Select titles
+           path: catalog/entities/by-uid/{{parameters.uid}}
+           valueSelector: metadata.name
+           allowArbitraryValues: false
+           setContextData:
+             component_name2: metadata.name
+             component_uid2: metadata.uid 
+             component_title2: metadata.title                
     - title: Fill in the repo details 2
       properties:             
         formContext:
