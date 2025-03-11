@@ -20,18 +20,18 @@ spec:
               filter: kind=resource,spec.type=eks,spec.owner=group:default/dcp,metadata.name=aws-31971-dcp-eks-testg-us-west-2-non-prod
             valueSelector: metadata.jenkinsurl
             allowArbitraryValues: false
-         uid:
-           type: string
-           ui:field: SelectFieldFromApi
-           ui:options:
-             placeholder: SELECT-UID
-             path: catalog/entities
-             valueSelector: metadata.uid
-             labelSelector: metadata.name
-             allowArbitraryValues: false      
-             setContextData:
-               component_uid: metadata.uid
-               component_name: metadata.name                    
+        uid:
+         type: string
+         ui:field: SelectFieldFromApi
+         ui:options:
+           placeholder: SELECT-UID
+           path: catalog/entities
+           valueSelector: metadata.uid
+           labelSelector: metadata.name
+           allowArbitraryValues: false      
+           setContextData:
+             component_uid: metadata.uid
+             component_name: metadata.name                    
         formContext:
           title: Live Form Context
           description: DEBUG Context
