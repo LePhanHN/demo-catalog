@@ -14,35 +14,12 @@ spec:
           type: string
           ui:field: SelectFieldFromApi
           ui:options:
-            placeholder: Select titles
+            placeholder: Select-env
             path: proxy/harness-idp-api/ow3wOLKoQASF8ih6yBsvAw/idp/api/catalog/entities
             params:
               filter: kind=resource,spec.type=eks,spec.owner=group:default/dcp,metadata.name=aws-31971-dcp-eks-testg-us-west-2-non-prod
             valueSelector: metadata.jenkinsurl
             allowArbitraryValues: false
-        uid:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            placeholder: Select titles
-            path: proxy/harness-idp-api/ow3wOLKoQASF8ih6yBsvAw/idp/api/catalog/entities
-            params:
-              filter: kind=resource,spec.type=eks,spec.owner=group:default/dcp,metadata.name=aws-31971-dcp-eks-testg-us-west-2-non-prod
-            valueSelector: metadata.uid
-            labelSelector: metadata.name
-            allowArbitraryValues: false          
-        title:
-          type: string
-          ui:field: SelectFieldFromApi
-          ui:options:
-            placeholder: Select titles
-            path: proxy/harness-idp-api/ow3wOLKoQASF8ih6yBsvAw/idp/api/catalog/entities/by-uid/{{parameters.uid}}
-            arraySelector: metadata.links
-            valueSelector: title
-            #setContextData:
-            #  exampl_title: title
-            #  exampl_url: url   
-            #  exampl_type: type
          uid:
            type: string
            ui:field: SelectFieldFromApi
@@ -54,21 +31,7 @@ spec:
              allowArbitraryValues: false      
              setContextData:
                component_uid: metadata.uid
-               component_name: metadata.name           
-        property_title:
-          title: title of the link
-          readonly: true
-          type: string
-          ui:field: ContextViewer
-          ui:options:
-            getContextData: {{formContext.exampl_title}}  
-        property_type:
-          title: type of the link
-          readonly: true
-          type: string
-          ui:field: ContextViewer
-          ui:options:
-            getContextData: {{formContext.exampl_type}}                
+               component_name: metadata.name                    
         formContext:
           title: Live Form Context
           description: DEBUG Context
