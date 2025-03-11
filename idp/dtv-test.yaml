@@ -31,7 +31,18 @@ spec:
            allowArbitraryValues: false      
            setContextData:
              component_uid: metadata.uid
-             component_name: metadata.name                    
+             component_name: metadata.name   
+         detail:
+           type: string
+           ui:field: SelectFieldFromApi
+           ui:options:
+             #placeholder: Select titles
+             path: catalog/entities?filter=metadata.uid={{parameters.uid}}
+             valueSelector: metadata.title      
+             allowArbitraryValues: false
+             setContextData:
+               component_uid: metadata.uid
+               component_name: metadata.name                
         formContext:
           title: Live Form Context
           description: DEBUG Context
