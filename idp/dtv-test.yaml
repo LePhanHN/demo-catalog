@@ -35,7 +35,6 @@ spec:
          ui:options:
            placeholder: Select titles
            path: catalog/entities?filter=metadata.uid={{parameters.uid}}
-           valueSelector: metadata.name
            valueSelector: metadata.title
            allowArbitraryValues: false
            setContextData:
