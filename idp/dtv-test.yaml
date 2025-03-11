@@ -31,7 +31,8 @@ spec:
            allowArbitraryValues: false    
            setContextData:
              component_name: metadata.name
-             component_uid: metadata.uid           
+             component_uid: metadata.uid 
+             component_uid: metadata.title
         formContext:
           title: Live Form Context
           description: DEBUG Context
