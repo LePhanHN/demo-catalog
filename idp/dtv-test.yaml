@@ -33,6 +33,18 @@ spec:
              component_name: metadata.name
              component_uid: metadata.uid 
              component_uid: metadata.title
+        detail:
+         type: string
+         ui:field: SelectFieldFromApi
+         ui:options:
+           placeholder: Select titles
+           path: catalog/entities?filter=metadata.uid={{parameters.uid}}
+           valueSelector: metadata.name     
+           setContextData:
+             component_name: metadata.name
+             component_uid: metadata.uid 
+             component_uid: metadata.title           
+           allowArbitraryValues: false                 
         formContext:
           title: Live Form Context
           description: DEBUG Context
