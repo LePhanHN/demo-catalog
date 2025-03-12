@@ -33,18 +33,6 @@ spec:
              component_name: metadata.name
              component_uid: metadata.uid 
              component_title: metadata.title   
-        detail1:
-         type: string
-         ui:field: SelectFieldFromApi
-         ui:options:
-           placeholder: Select titles
-           path: catalog/entities?filter=metadata.uid={{parameters.uid}}
-           valueSelector: metadata.name      
-           allowArbitraryValues: false     
-           setContextData:
-             component_name1: metadata.name
-             component_uid1: metadata.uid 
-             component_title1: metadata.title  
         detail2:
          type: string
          ui:field: SelectFieldFromApi
